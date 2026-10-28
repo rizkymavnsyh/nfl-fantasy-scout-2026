@@ -1,0 +1,199 @@
+{
+  "n_rosters": 690,
+  "n_weeks": 23,
+  "model_mean_points": 86.80933333333334,
+  "baseline_mean_points": 83.78388405797102,
+  "mean_difference": 3.025449275362319,
+  "win_rate": 0.508695652173913,
+  "tie_rate": 0.15507246376811595,
+  "weekly": [
+    {
+      "season": 2025,
+      "week": 2,
+      "model_points": 83.84866666666667,
+      "baseline_points": 76.24133333333333,
+      "difference": 7.607333333333331
+    },
+    {
+      "season": 2025,
+      "week": 3,
+      "model_points": 80.566,
+      "baseline_points": 78.97933333333334,
+      "difference": 1.586666666666665
+    },
+    {
+      "season": 2025,
+      "week": 4,
+      "model_points": 90.86133333333332,
+      "baseline_points": 89.068,
+      "difference": 1.7933333333333297
+    },
+    {
+      "season": 2025,
+      "week": 5,
+      "model_points": 95.932,
+      "baseline_points": 92.92533333333333,
+      "difference": 3.0066666666666677
+    },
+    {
+      "season": 2025,
+      "week": 6,
+      "model_points": 85.64333333333335,
+      "baseline_points": 86.51533333333333,
+      "difference": -0.8719999999999999
+    },
+    {
+      "season": 2025,
+      "week": 7,
+      "model_points": 87.46133333333333,
+      "baseline_points": 83.89666666666668,
+      "difference": 3.5646666666666667
+    },
+    {
+      "season": 2025,
+      "week": 8,
+      "model_points": 81.37866666666667,
+      "baseline_points": 78.91733333333333,
+      "difference": 2.4613333333333327
+    },
+    {
+      "season": 2025,
+      "week": 9,
+      "model_points": 89.34400000000001,
+      "baseline_points": 96.35799999999999,
+      "difference": -7.013999999999998
+    },
+    {
+      "season": 2025,
+      "week": 10,
+      "model_points": 88.08266666666667,
+      "baseline_points": 80.26066666666667,
+      "difference": 7.822000000000001
+    },
+    {
+      "season": 2025,
+      "week": 11,
+      "model_points": 84.70599999999999,
+      "baseline_points": 82.08066666666667,
+      "difference": 2.625333333333334
+    },
+    {
+      "season": 2025,
+      "week": 12,
+      "model_points": 87.05066666666667,
+      "baseline_points": 84.28866666666666,
+      "difference": 2.761999999999998
+    },
+    {
+      "season": 2025,
+      "week": 13,
+      "model_points": 86.93866666666666,
+      "baseline_points": 83.42133333333332,
+      "difference": 3.5173333333333328
+    },
+    {
+      "season": 2025,
+      "week": 14,
+      "model_points": 83.95333333333333,
+      "baseline_points": 82.58066666666667,
+      "difference": 1.3726666666666658
+    },
+    {
+      "season": 2025,
+      "week": 15,
+      "model_points": 104.82333333333332,
+      "baseline_points": 102.95333333333333,
+      "difference": 1.869999999999999
+    },
+    {
+      "season": 2025,
+      "week": 16,
+      "model_points": 91.77533333333334,
+      "baseline_points": 92.356,
+      "difference": -0.5806666666666653
+    },
+    {
+      "season": 2025,
+      "week": 17,
+      "model_points": 79.39200000000001,
+      "baseline_points": 76.29733333333334,
+      "difference": 3.094666666666667
+    },
+    {
+      "season": 2025,
+      "week": 18,
+      "model_points": 69.94800000000001,
+      "baseline_points": 68.336,
+      "difference": 1.6119999999999983
+    },
+    {
+      "season": 2026,
+      "week": 2,
+      "model_points": 85.63133333333333,
+      "baseline_points": 80.634,
+      "difference": 4.997333333333333
+    },
+    {
+      "season": 2026,
+      "week": 3,
+      "model_points": 87.05,
+      "baseline_points": 83.56533333333333,
+      "difference": 3.4846666666666666
+    },
+    {
+      "season": 2026,
+      "week": 4,
+      "model_points": 89.78466666666667,
+      "baseline_points": 82.22066666666666,
+      "difference": 7.564000000000001
+    },
+    {
+      "season": 2026,
+      "week": 5,
+      "model_points": 97.90666666666668,
+      "baseline_points": 92.29,
+      "difference": 5.616666666666669
+    },
+    {
+      "season": 2026,
+      "week": 6,
+      "model_points": 77.63000000000001,
+      "baseline_points": 72.17133333333332,
+      "difference": 5.458666666666668
+    },
+    {
+      "season": 2026,
+      "week": 7,
+      "model_points": 86.90666666666667,
+      "baseline_points": 80.672,
+      "difference": 6.234666666666664
+    }
+  ],
+  "status": "Simulasi retrospektif pada data uji yang sudah pernah diperiksa",
+  "protocol": {
+    "seed": 20261027,
+    "rosters_per_week": 30,
+    "slots": {
+      "QB": 1,
+      "RB": 2,
+      "WR": 2,
+      "TE": 1,
+      "FLEX": 1
+    },
+    "roster_sizes": {
+      "QB": 2,
+      "RB": 4,
+      "WR": 5,
+      "TE": 2
+    },
+    "candidate_caps": {
+      "QB": 24,
+      "RB": 60,
+      "WR": 72,
+      "TE": 30
+    },
+    "pool_rule": "Top pre-game rolling-five average per position, then seeded sampling without replacement.",
+    "claim": "Simulated rosters, not real league ownership. Weekly clusters are not independent roster trials.",
+    "missing_target_rule": "Zero only after final scores and player-stat rows for both teams are present."
+  }
+}

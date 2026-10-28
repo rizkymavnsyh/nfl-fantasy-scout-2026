@@ -1,0 +1,389 @@
+{
+  "reference": {
+    "model": "v6_reference",
+    "weights": {
+      "v6_market_hurdle": 0.5,
+      "v6_market_mean": 0.5
+    },
+    "folds": [
+      {
+        "validation_season": 2023,
+        "train_n": 24062,
+        "n": 6130,
+        "mae": 4.192621962647597,
+        "rmse": 5.927289523798542,
+        "r2": 0.438019044908188
+      },
+      {
+        "validation_season": 2024,
+        "train_n": 30192,
+        "n": 6098,
+        "mae": 4.344961360747278,
+        "rmse": 6.13740013199895,
+        "r2": 0.42718069864319164
+      }
+    ],
+    "cv_mae": 4.2687916616974375,
+    "cv_rmse": 6.032344827898746
+  },
+  "selected": {
+    "model": "v6_reference",
+    "weights": {
+      "v6_market_hurdle": 0.5,
+      "v6_market_mean": 0.5
+    },
+    "folds": [
+      {
+        "validation_season": 2023,
+        "train_n": 24062,
+        "n": 6130,
+        "mae": 4.192621962647597,
+        "rmse": 5.927289523798542,
+        "r2": 0.438019044908188
+      },
+      {
+        "validation_season": 2024,
+        "train_n": 30192,
+        "n": 6098,
+        "mae": 4.344961360747278,
+        "rmse": 6.13740013199895,
+        "r2": 0.42718069864319164
+      }
+    ],
+    "cv_mae": 4.2687916616974375,
+    "cv_rmse": 6.032344827898746
+  },
+  "candidates": [
+    {
+      "model": "v6_reference",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192621962647597,
+          "rmse": 5.927289523798542,
+          "r2": 0.438019044908188
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.344961360747278,
+          "rmse": 6.13740013199895,
+          "r2": 0.42718069864319164
+        }
+      ],
+      "cv_mae": 4.2687916616974375,
+      "cv_rmse": 6.032344827898746
+    },
+    {
+      "model": "v7_redzone_hurdle",
+      "weights": {
+        "v7_redzone_hurdle": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.195446294230742,
+          "rmse": 5.932624485624866,
+          "r2": 0.43700694782803085
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.357952854899022,
+          "rmse": 6.151062716751634,
+          "r2": 0.42462753179632573
+        }
+      ],
+      "cv_mae": 4.276699574564882,
+      "cv_rmse": 6.0418436011882495
+    },
+    {
+      "model": "v6+25pct_v7_redzone_hurdle",
+      "weights": {
+        "v6_market_hurdle": 0.375,
+        "v6_market_mean": 0.375,
+        "v7_redzone_hurdle": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.1907920463837565,
+          "rmse": 5.923739670969994,
+          "r2": 0.43869198395983333
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.345710352504204,
+          "rmse": 6.136725024958429,
+          "r2": 0.42730671065671744
+        }
+      ],
+      "cv_mae": 4.268251199443981,
+      "cv_rmse": 6.030232347964212
+    },
+    {
+      "model": "v6+50pct_v7_redzone_hurdle",
+      "weights": {
+        "v6_market_hurdle": 0.25,
+        "v6_market_mean": 0.25,
+        "v7_redzone_hurdle": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.190461238355744,
+          "rmse": 5.9234461184070515,
+          "r2": 0.43874761413035557
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348341359113566,
+          "rmse": 6.1387795157810485,
+          "r2": 0.426923186853415
+        }
+      ],
+      "cv_mae": 4.269401298734655,
+      "cv_rmse": 6.03111281709405
+    },
+    {
+      "model": "v6+75pct_v7_redzone_hurdle",
+      "weights": {
+        "v6_market_hurdle": 0.125,
+        "v6_market_mean": 0.125,
+        "v7_redzone_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192031205506616,
+          "rmse": 5.92640934999225,
+          "r2": 0.4381859354197548
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.352524640964958,
+          "rmse": 6.143560866022787,
+          "r2": 0.4260301272332845
+        }
+      ],
+      "cv_mae": 4.272277923235787,
+      "cv_rmse": 6.034985108007518
+    },
+    {
+      "model": "v7_redzone_mean",
+      "weights": {
+        "v7_redzone_mean": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.200506532217494,
+          "rmse": 5.933689580411688,
+          "r2": 0.43680477936324735
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.35318134327065,
+          "rmse": 6.146108488504995,
+          "r2": 0.425553998886932
+        }
+      ],
+      "cv_mae": 4.276843937744072,
+      "cv_rmse": 6.039899034458341
+    },
+    {
+      "model": "v6+25pct_v7_redzone_mean",
+      "weights": {
+        "v6_market_hurdle": 0.375,
+        "v6_market_mean": 0.375,
+        "v7_redzone_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192027610819154,
+          "rmse": 5.92407032301681,
+          "r2": 0.4386293198879587
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3444847580948665,
+          "rmse": 6.135440696941382,
+          "r2": 0.4275463984596394
+        }
+      ],
+      "cv_mae": 4.268256184457011,
+      "cv_rmse": 6.029755509979096
+    },
+    {
+      "model": "v6+50pct_v7_redzone_mean",
+      "weights": {
+        "v6_market_hurdle": 0.25,
+        "v6_market_mean": 0.25,
+        "v7_redzone_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.193481707936524,
+          "rmse": 5.9240647964647595,
+          "r2": 0.4386303672903922
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.345679022808543,
+          "rmse": 6.136240281817079,
+          "r2": 0.42739718177241215
+        }
+      ],
+      "cv_mae": 4.2695803653725335,
+      "cv_rmse": 6.03015253914092
+    },
+    {
+      "model": "v6+75pct_v7_redzone_mean",
+      "weights": {
+        "v6_market_hurdle": 0.125,
+        "v6_market_mean": 0.125,
+        "v7_redzone_mean": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.196267919039959,
+          "rmse": 5.927272953131619,
+          "r2": 0.43802218711548835
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3485844476472275,
+          "rmse": 6.13979780870598,
+          "r2": 0.4267330485815096
+        }
+      ],
+      "cv_mae": 4.272426183343594,
+      "cv_rmse": 6.033535380918799
+    },
+    {
+      "model": "redzone_hurdle+25pct_redzone_mean",
+      "weights": {
+        "v7_redzone_hurdle": 0.75,
+        "v7_redzone_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.191609399484405,
+          "rmse": 5.924767494348512,
+          "r2": 0.43849718284282735
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.353547991161061,
+          "rmse": 6.143220538457477,
+          "r2": 0.42609371653049244
+        }
+      ],
+      "cv_mae": 4.272578695322733,
+      "cv_rmse": 6.033994016402994
+    },
+    {
+      "model": "redzone_hurdle+50pct_redzone_mean",
+      "weights": {
+        "v7_redzone_hurdle": 0.5,
+        "v7_redzone_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.191099971694752,
+          "rmse": 5.922324023994424,
+          "r2": 0.43896023310362897
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.351376045923132,
+          "rmse": 6.139777419815306,
+          "r2": 0.4267368559569825
+        }
+      ],
+      "cv_mae": 4.2712380088089414,
+      "cv_rmse": 6.031050721904865
+    },
+    {
+      "model": "redzone_hurdle+75pct_redzone_mean",
+      "weights": {
+        "v7_redzone_hurdle": 0.25,
+        "v7_redzone_mean": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.194219626539829,
+          "rmse": 5.925300771835469,
+          "r2": 0.4383960986104356
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.350775123406388,
+          "rmse": 6.140740760499204,
+          "r2": 0.42655695007579564
+        }
+      ],
+      "cv_mae": 4.272497374973108,
+      "cv_rmse": 6.033020766167336
+    }
+  ],
+  "promoted": false,
+  "locked_before_replay_at_utc": "2026-10-28T10:42:54.180117+00:00",
+  "rule": "Minimize full-cohort mean CV RMSE, requiring MAE <= V6 and RMSE <= 99.75% of V6. Otherwise retain V6."
+}

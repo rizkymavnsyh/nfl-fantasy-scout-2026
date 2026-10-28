@@ -1,0 +1,9 @@
+{
+  "n": 384,
+  "fantasy_pool_n": 291,
+  "role_history_n": 383,
+  "snap_source_max_week_2026": 7,
+  "injury_source_max_week_2026": 7,
+  "source_manifest_sha256": "16c2be2fe8062aaa92760f499155a3962040249ed95b3ea26891b2332c37de02",
+  "rule": "Uses previous-week/game role only, never future participation. A fantasy-pool flag is not a game-day active confirmation."
+}

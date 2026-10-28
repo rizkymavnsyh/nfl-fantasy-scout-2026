@@ -1,0 +1,26 @@
+{
+  "seed": 20261027,
+  "rosters_per_week": 30,
+  "slots": {
+    "QB": 1,
+    "RB": 2,
+    "WR": 2,
+    "TE": 1,
+    "FLEX": 1
+  },
+  "roster_sizes": {
+    "QB": 2,
+    "RB": 4,
+    "WR": 5,
+    "TE": 2
+  },
+  "candidate_caps": {
+    "QB": 24,
+    "RB": 60,
+    "WR": 72,
+    "TE": 30
+  },
+  "pool_rule": "Top pre-game rolling-five average per position, then seeded sampling without replacement.",
+  "claim": "Simulated rosters, not real league ownership. Weekly clusters are not independent roster trials.",
+  "missing_target_rule": "Zero only after final scores and player-stat rows for both teams are present."
+}

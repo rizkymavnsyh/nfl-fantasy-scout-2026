@@ -1,0 +1,27 @@
+{
+  "old": {
+    "n": 8288,
+    "mae": 4.4506481847821995,
+    "rmse": 6.2220425342895505,
+    "r2": 0.3877821721351872
+  },
+  "v2": {
+    "n": 8288,
+    "mae": 4.150347939663023,
+    "rmse": 6.388276426519757,
+    "r2": 0.3546320092933867
+  },
+  "new": {
+    "n": 8288,
+    "mae": 4.334916589401347,
+    "rmse": 6.1825883996948745,
+    "r2": 0.3955217342525442
+  },
+  "cv_mae_old": 4.408899372297379,
+  "cv_mae_new": 4.3190443391944076,
+  "cv_rmse_old": 6.187436323967404,
+  "cv_rmse_new": 6.1762371393962745,
+  "evaluation_status": "Repeated retrospective replay on already-inspected 2025/26 data. Independent future-week verification still required.",
+  "mae_reduction_from_v1_pct": 2.6003312456052052,
+  "rmse_reduction_from_v2_pct": 3.219773427007731
+}

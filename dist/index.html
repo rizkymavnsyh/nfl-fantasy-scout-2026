@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NFL Fantasy Scout 2026: next-game PPR projections, start/sit comparisons and lineup optimization, with a transparent model report.">
+  <title>NFL Fantasy Scout 2026 · Rizky Maulana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="#" data-tab-link="rankings" aria-label="Fantasy Scout home">
+      <span class="wordmark-badge">26</span>
+      <span class="wordmark-text">Fantasy Scout</span>
+    </a>
+    <nav class="tabs" aria-label="Sections">
+      <button class="tab is-active" data-tab="rankings">Rankings</button>
+      <button class="tab" data-tab="compare">Start / Sit</button>
+      <button class="tab" data-tab="lineup">Lineup <span class="tab-count" id="roster-count">0</span></button>
+      <button class="tab" data-tab="model">Model</button>
+    </nav>
+  </div>
+  <div class="ticker" id="ticker" aria-label="Upcoming games"></div>
+</header>
+
+<main id="main">
+  <div id="loading" class="loading" role="status">Loading projections…</div>
+  <div id="app" hidden>
+
+    <section class="intro">
+      <div class="intro-copy">
+        <p class="kicker"><span id="week-label">Week —</span> · Full PPR · QB RB WR TE</p>
+        <h1>Next-game fantasy projections, tested against real outcomes.</h1>
+        <p class="lede">A LightGBM ensemble trained on nflverse player data from 2019 onward. Every number below comes from information available before kickoff: recent usage, snap share, prior-week injury reports and the Vegas line.</p>
+        <p class="snapshot" id="snapshot-text"></p>
+      </div>
+      <dl class="statline" aria-label="Test results">
+        <div><dt>Test MAE</dt><dd id="stat-mae">—</dd><small>PPR points per player-game</small></div>
+        <div><dt>vs baseline</dt><dd id="stat-lift">—</dd><small>lower error than 5-game average</small></div>
+        <div><dt>Test games</dt><dd id="stat-n">—</dd><small>2025 + 2026 seasons</small></div>
+        <div><dt>Players this week</dt><dd id="stat-players">—</dd><small id="stat-players-note">fantasy-relevant</small></div>
+      </dl>
+    </section>
+    <div class="archive-banner" id="archive-banner" hidden></div>
+
+    <!-- RANKINGS -->
+    <section class="panel" id="tab-rankings">
+      <div class="panel-head">
+        <h2>Rankings</h2>
+        <p>Click a player for detail. Tick the box to add them to your lineup roster.</p>
+      </div>
+      <div class="rankings">
+        <div class="board">
+          <div class="toolbar">
+            <div class="segmented" id="position-filters" role="group" aria-label="Position">
+              <button class="is-on" data-pos="ALL">All</button>
+              <button data-pos="QB">QB</button>
+              <button data-pos="RB">RB</button>
+              <button data-pos="WR">WR</button>
+              <button data-pos="TE">TE</button>
+            </div>
+            <input id="search" class="search" type="search" placeholder="Search player or team" aria-label="Search player or team">
+            <select id="game-filter" aria-label="Game"></select>
+            <select id="sort" aria-label="Sort">
+              <option value="prediction">Sort: projection</option>
+              <option value="average">Sort: 5-game average</option>
+              <option value="delta">Sort: projection vs average</option>
+              <option value="implied_total">Sort: implied team total</option>
+              <option value="name">Sort: name</option>
+            </select>
+            <select id="pool" aria-label="Player pool">
+              <option value="fantasy">Fantasy-relevant</option>
+              <option value="all">All candidates</option>
+            </select>
+          </div>
+          <div class="table-scroll">
+            <table class="rank-table">
+              <thead>
+                <tr>
+                  <th class="col-check"><span class="sr-only">Roster</span></th>
+                  <th class="col-rank">#</th>
+                  <th>Player</th>
+                  <th>Opp</th>
+                  <th class="num">Proj</th>
+                  <th class="col-range">80% range</th>
+                  <th class="num">L5</th>
+                  <th class="num col-hide">Team total</th>
+                </tr>
+              </thead>
+              <tbody id="rank-body"></tbody>
+            </table>
+          </div>
+          <div class="pager">
+            <span id="page-info"></span>
+            <div>
+              <button id="prev-page" aria-label="Previous page">Prev</button>
+              <button id="next-page" aria-label="Next page">Next</button>
+            </div>
+          </div>
+        </div>
+        <aside class="player-card" id="player-card" aria-live="polite"></aside>
+      </div>
+      <p class="footnote" id="rankings-note"></p>
+    </section>
+
+    <!-- START / SIT -->
+    <section class="panel" id="tab-compare" hidden>
+      <div class="panel-head">
+        <h2>Start / Sit</h2>
+        <p>Two players, one slot. The bars show each projection with its historical 80% error range.</p>
+      </div>
+      <div class="compare-pick">
+        <select id="compare-a" aria-label="First player"></select>
+        <span class="versus">vs</span>
+        <select id="compare-b" aria-label="Second player"></select>
+      </div>
+      <div id="compare-result" aria-live="polite"></div>
+    </section>
+
+    <!-- LINEUP -->
+    <section class="panel" id="tab-lineup" hidden>
+      <div class="panel-head">
+        <h2>Lineup optimizer</h2>
+        <p id="lineup-sub">Finds the highest projected 1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX from your roster.</p>
+      </div>
+      <div class="lineup-actions">
+        <p id="roster-summary"></p>
+        <div>
+          <button class="btn" id="demo-roster">Load sample roster</button>
+          <button class="btn" id="clear-roster">Clear</button>
+          <button class="btn btn-primary" id="optimize">Optimize lineup</button>
+        </div>
+      </div>
+      <div class="lineup">
+        <div class="depth-chart" id="depth-chart">
+          <p class="empty">Tick players in Rankings, or load the sample roster, then optimize.</p>
+        </div>
+        <aside class="lineup-side" id="lineup-side">
+          <h3>Roster</h3>
+          <div id="roster-list" class="chips"></div>
+          <p class="footnote">Only players with a fresh active-roster check and no Out/Doubtful tag for this week are used. Kickers and defenses are out of scope.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MODEL -->
+    <section class="panel" id="tab-model" hidden>
+      <div class="panel-head">
+        <h2>Model report</h2>
+        <a class="link" href="test_predictions.csv" download>Download all test predictions (CSV)</a>
+      </div>
+
+      <div class="scorecard" id="scorecard"></div>
+
+      <div class="grid-2">
+        <figure class="figure">
+          <figcaption><h3>Each version, same 8,288 test games</h3><p>Mean absolute error (dots) and RMSE in PPR points. Lower is better for both.</p></figcaption>
+          <div id="chart-versions"></div>
+        </figure>
+        <figure class="figure">
+          <figcaption><h3>Projected vs actual</h3><p>Dots: 700 random test games. Line: average actual points per projection decile.</p></figcaption>
+          <div id="chart-calibration"></div>
+        </figure>
+      </div>
+
+      <div class="grid-2">
+        <figure class="figure">
+          <figcaption><h3>What drives the projection</h3><p>Share of LightGBM split gain. Red marks features added in V6.</p></figcaption>
+          <div id="chart-importance"></div>
+        </figure>
+        <figure class="figure">
+          <figcaption><h3>Error by position</h3><p>Test MAE, model vs 5-game rolling average.</p></figcaption>
+          <div id="chart-positions"></div>
+        </figure>
+      </div>
+
+      <div class="grid-2">
+        <article class="figure">
+          <h3>Time-based validation</h3>
+          <ol class="protocol">
+            <li><span>2019–2022</span><b>train</b><span>2023</span><b>validate</b></li>
+            <li><span>2019–2023</span><b>train</b><span>2024</span><b>validate</b></li>
+            <li class="is-final"><span>2019–2024</span><b>train</b><span>2025–26</span><b>test</b></li>
+          </ol>
+          <p id="protocol-text"></p>
+        </article>
+        <article class="figure">
+          <h3>Honest caveats</h3>
+          <ul class="caveats">
+            <li>The 2025–26 seasons were looked at while building earlier versions, so the test is a retrospective replay, not a pristine holdout. V6 itself was chosen on 2023–24 validation only and scored on test once.</li>
+            <li>Ranges are the 80th percentile of validation errors per position. They are not a guarantee for any single player.</li>
+            <li>Historical rows use closing Vegas lines; live projections use the line available at refresh time.</li>
+            <li>Game-day active status, kickers, defenses and Week 1 are out of scope.</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="figure">
+        <div class="figure-head">
+          <h3>Recent predictions vs what happened</h3>
+          <span id="audit-note"></span>
+        </div>
+        <div class="table-scroll audit">
+          <table>
+            <thead><tr><th>Player</th><th>Pos</th><th>Season / week</th><th class="num">Projected</th><th class="num">Actual</th><th class="num">Abs. error</th></tr></thead>
+            <tbody id="audit-body"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="method" id="method">
+      <h2>How it works</h2>
+      <div class="method-cols">
+        <div>
+          <h3>Data</h3>
+          <p>Weekly player stats, schedules, Vegas lines, snap counts, rosters and injury reports from <a href="https://github.com/nflverse" target="_blank" rel="noopener">nflverse</a> (CC BY 4.0), 2019–2026 regular seasons. Target: full-PPR points in the player's next scheduled game.</p>
+        </div>
+        <div>
+          <h3>Features</h3>
+          <p id="method-features">Rolling 3/5-game and season averages, exponentially weighted form, career form, touchdown-free scoring, snap share and trend, prior-week injury flags, opponent points allowed, rest, home/away, spread and implied team total. Nothing from the target game is used.</p>
+        </div>
+        <div>
+          <h3>Model</h3>
+          <p id="method-model">Blend of a LightGBM regressor and a two-stage hurdle model (chance of scoring × expected points). Candidates were compared on expanding-season validation; a new version replaces the old one only if it lowers both MAE and RMSE.</p>
+        </div>
+      </div>
+      <p class="downloads">
+        <a class="link" href="forecasts.csv" download>Projections CSV</a>
+        <a class="link" href="metrics.json" download>Full metrics JSON</a>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p><b>Mochamad Rizky Maulana Aviansyah</b> · Independent portfolio project. Not affiliated with the NFL or any fantasy platform.</p>
+      <a class="link" href="https://www.linkedin.com/in/mochamad-rizky-maulana-aviansyah/" target="_blank" rel="noopener">LinkedIn</a>
+    </footer>
+  </div>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

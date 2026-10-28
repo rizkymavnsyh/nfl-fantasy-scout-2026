@@ -1,0 +1,17 @@
+{
+  "week7_not_forecast_after_completion": true,
+  "first_week8_kickoff_wib_correct": true,
+  "started_game_removed_even_if_scores_missing": true,
+  "US_DST_conversion_correct": true,
+  "January2027_belongs_to_season2026": true,
+  "postseason_not_silently_forecast": true,
+  "each_player_targets_next_game_of_team": true,
+  "all_forecasts_after_asof": true,
+  "week7_or_later_complete": true,
+  "source_gaps_disclosed": true,
+  "forecast_n": 384,
+  "weeks": [
+    8,
+    9
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "snapshot_id": "20261028T100313100319Z",
+  "frozen_at_utc": "2026-10-28T10:03:13.100319+00:00",
+  "feature_cutoff_utc": "2026-10-28T09:47:50.780816+00:00",
+  "n": 384,
+  "protocol": {
+    "seed": 20261027,
+    "rosters_per_week": 30,
+    "slots": {
+      "QB": 1,
+      "RB": 2,
+      "WR": 2,
+      "TE": 1,
+      "FLEX": 1
+    },
+    "roster_sizes": {
+      "QB": 2,
+      "RB": 4,
+      "WR": 5,
+      "TE": 2
+    },
+    "candidate_caps": {
+      "QB": 24,
+      "RB": 60,
+      "WR": 72,
+      "TE": 30
+    },
+    "pool_rule": "Top pre-game rolling-five average per position, then seeded sampling without replacement.",
+    "claim": "Simulated rosters, not real league ownership. Weekly clusters are not independent roster trials.",
+    "missing_target_rule": "Zero only after final scores and player-stat rows for both teams are present."
+  },
+  "forecast_sha256": "f295be877051ac9b485a134edd09258d0d1d0b558a6157d09e5518d6f23c5760",
+  "lineups_sha256": "aeb528b896e0d963fcff4d02f29c92a5f4d87cbd0ddefdf4d61a1267e579228d",
+  "model_sha256": "f8745a7185940813fa90505c90d35447e07ba3643160be3aa363cb2d3e0a1df0",
+  "source_forecast": {
+    "as_of_utc": "2026-10-28T09:47:50.780816+00:00",
+    "as_of_wib": "28 Oct 2026 16:47 WIB",
+    "season": 2026,
+    "season_label": "Musim reguler 2026 · berlanjut ke Januari 2027",
+    "latest_complete_week": 7,
+    "latest_observed_week": 7,
+    "next_week": 8,
+    "next_kickoff_utc": "2026-10-30T00:15:00+00:00",
+    "next_kickoff_wib": "30 Oct 2026 07:15 WIB",
+    "missing_completed_games": [],
+    "sources": [
+      {
+        "file": "stats_player_week_2026.csv",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
+        "last_modified": null,
+        "bytes": 3315437,
+        "sha256": "24b95fd79ea1ea96354ccbe444e21cc75df3a7d466b1ccf30a5c93fcf481df37"
+      },
+      {
+        "file": "games.csv",
+        "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+        "last_modified": null,
+        "bytes": 2186549,
+        "sha256": "7c7a77f342fc4927adbd84ec2b94997b587cfbf9db4496c02e163cf1483b686f"
+      }
+    ],
+    "candidate_count": 384,
+    "next_game_per_team": true,
+    "history_training_n": 44605,
+    "coverage": "Next scheduled regular-season game for each currently eligible player; no season-total or playoff forecasts.",
+    "update_mode": "Manual refresh command, not an automatic live feed."
+  },
+  "availability": {
+    "sources": {
+      "roster": {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv",
+        "retrieved_at_utc": "2026-10-28T09:54:31.512515+00:00",
+        "last_modified": "Wed, 28 Oct 2026 06:04:47 GMT",
+        "sha256": "342ec8f6aac66f5aed9af0bad8d6e3589b90f00366015bac6b5bf893fc5d35ea",
+        "error": null
+      },
+      "injuries": {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+        "retrieved_at_utc": "2026-10-28T09:54:31.512515+00:00",
+        "last_modified": "Wed, 28 Oct 2026 06:03:04 GMT",
+        "sha256": "2ccefb12af2e4c148d95657881412f9d16a8db6ed368fa79fc977d81e309523c",
+        "error": null
+      }
+    },
+    "eligible": 355,
+    "total": 384,
+    "checked_at_utc": "2026-10-28T09:54:33.568689+00:00",
+    "injury_latest_week": 8,
+    "game_day_active_confirmed": false,
+    "freshness_hours": 48
+  },
+  "code_sha256": {
+    "prospective.py": "de7396b814aba5ff95af26f26a3e3d6096cc799c9a3e5e3b6633a1e8cdf50526",
+    "availability.py": "b891367872dd557dad8523dacc7caf279e2ce93cf4ac1dfd218bfc93ecec1943",
+    "forecast_models.py": "7fecf7a167e30eedbe2946c2cda50c5f3dfa66f71acbb59784a03d0e3bf7be93",
+    "refresh_forecasts.py": "c32d160c104bfda9b2ec52c045ebd4ec9dc547731cba80e2f438b0dbebd114a9",
+    "pregame_features.py": "9d64fb85898bec61877f73425aca2e828b6477226220bbced183c624bb2df632"
+  },
+  "note": "Append-only snapshot. Hash detects local edits, not independent third-party timestamp certification.",
+  "model_name": "market_hurdle+50pct_v6_market_mean",
+  "model_version": "v6",
+  "pregame_sources": [
+    {
+      "file": "roster_2019.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2019.csv",
+      "bytes": 1001234,
+      "retrieved_at_utc": "2026-10-27T15:16:25.611114+00:00",
+      "last_modified": "Wed, 13 Sep 2023 00:59:44 GMT",
+      "sha256": "b00259cfddf2146512569423275dc17e142d31ddb13bfba6b0b826c9d3d810da",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2019.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2019.csv",
+      "bytes": 2156311,
+      "retrieved_at_utc": "2026-10-27T15:16:25.773702+00:00",
+      "last_modified": "Mon, 06 Oct 2025 06:51:03 GMT",
+      "sha256": "0cd52be8fa57f18503b670cb8263246c4f548375b768cbcad1c7a7462c98970d",
+      "error": null
+    },
+    {
+      "file": "injuries_2019.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2019.csv",
+      "bytes": 700757,
+      "retrieved_at_utc": "2026-10-27T15:16:25.574784+00:00",
+      "last_modified": "Tue, 26 Jul 2022 05:23:22 GMT",
+      "sha256": "daddfe8e04ddc3a29bce14f362e774fbadfb274c807f1f0fde7b5bf32aaf6cdf",
+      "error": null
+    },
+    {
+      "file": "roster_2020.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2020.csv",
+      "bytes": 988000,
+      "retrieved_at_utc": "2026-10-27T15:16:25.476522+00:00",
+      "last_modified": "Wed, 13 Sep 2023 01:04:58 GMT",
+      "sha256": "dcf25143db7b54ac488d042b6c24142340effced1d6c8599b2084a9f412b3ed2",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2020.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2020.csv",
+      "bytes": 2257664,
+      "retrieved_at_utc": "2026-10-27T15:16:26.617032+00:00",
+      "last_modified": "Thu, 24 Sep 2026 12:50:26 GMT",
+      "sha256": "512e35f17d076eb5d99b933c4a144eb95dcddf40c0320dbb397cae3c35683716",
+      "error": null
+    },
+    {
+      "file": "injuries_2020.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2020.csv",
+      "bytes": 737474,
+      "retrieved_at_utc": "2026-10-27T15:16:26.564908+00:00",
+      "last_modified": "Tue, 26 Jul 2022 05:23:28 GMT",
+      "sha256": "706cca82824214f6b73ba0c6e537d3ee39766a50c644b8974b9fc28d7518de90",
+      "error": null
+    },
+    {
+      "file": "roster_2021.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2021.csv",
+      "bytes": 953822,
+      "retrieved_at_utc": "2026-10-27T15:16:26.617032+00:00",
+      "last_modified": "Wed, 13 Sep 2023 01:10:36 GMT",
+      "sha256": "a95e57ebe1df25224a4d19ed43aaffc5c2097a8b369954178b8592537ff77d34",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2021.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2021.csv",
+      "bytes": 2388493,
+      "retrieved_at_utc": "2026-10-27T15:16:26.981326+00:00",
+      "last_modified": "Mon, 06 Oct 2025 06:51:11 GMT",
+      "sha256": "8e4dae054a4749cf2d4919508d9161a6068fd67509979aefa385bfb3803d0ee5",
+      "error": null
+    },
+    {
+      "file": "injuries_2021.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2021.csv",
+      "bytes": 737083,
+      "retrieved_at_utc": "2026-10-27T15:16:27.664047+00:00",
+      "last_modified": "Wed, 31 Aug 2022 07:37:30 GMT",
+      "sha256": "1049fb9ff0fe7cfcf3ba8bfe1f5a35d3aba985c461c8fb7bf5201735b6d34254",
+      "error": null
+    },
+    {
+      "file": "roster_2022.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2022.csv",
+      "bytes": 980115,
+      "retrieved_at_utc": "2026-10-27T15:16:27.779949+00:00",
+      "last_modified": "Wed, 13 Sep 2023 01:16:12 GMT",
+      "sha256": "864719595d14909c73bd14110adcdcfc304c6621de9ba34feafb83666fac43c9",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2022.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2022.csv",
+      "bytes": 2379719,
+      "retrieved_at_utc": "2026-10-27T15:16:27.942587+00:00",
+      "last_modified": "Mon, 06 Oct 2025 06:51:14 GMT",
+      "sha256": "0018a4833fbf0f825286c1c27450c6254391b548d6c55bcde728e93e4816815a",
+      "error": null
+    },
+    {
+      "file": "injuries_2022.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2022.csv",
+      "bytes": 752433,
+      "retrieved_at_utc": "2026-10-27T15:16:27.914221+00:00",
+      "last_modified": "Thu, 31 Aug 2023 07:14:24 GMT",
+      "sha256": "5f0d60324e597edd1a2ced8540b04e40b51dd440591dd1df11b8d96343387c9e",
+      "error": null
+    },
+    {
+      "file": "roster_2023.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2023.csv",
+      "bytes": 967354,
+      "retrieved_at_utc": "2026-10-27T15:16:28.532839+00:00",
+      "last_modified": "Thu, 14 Mar 2024 07:18:18 GMT",
+      "sha256": "f98283e6ef420babc597092b5483109a4570f9b5f63b7bfcce69643290960b6c",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2023.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2023.csv",
+      "bytes": 2394875,
+      "retrieved_at_utc": "2026-10-27T15:16:28.917479+00:00",
+      "last_modified": "Mon, 06 Oct 2025 06:51:17 GMT",
+      "sha256": "303b61aa5c33ffda863f93a750fc14483f397f9187ad502b1ce71e9b516a64c0",
+      "error": null
+    },
+    {
+      "file": "injuries_2023.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2023.csv",
+      "bytes": 738501,
+      "retrieved_at_utc": "2026-10-27T15:16:28.880511+00:00",
+      "last_modified": "Wed, 04 Sep 2024 07:15:42 GMT",
+      "sha256": "16b04e21da5aa3944cfa9c22cafcc84ed7e6d9866eaddf0344e9b8cbf2f63afe",
+      "error": null
+    },
+    {
+      "file": "roster_2024.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2024.csv",
+      "bytes": 1005701,
+      "retrieved_at_utc": "2026-10-27T15:16:28.947159+00:00",
+      "last_modified": "Fri, 14 Mar 2025 07:16:10 GMT",
+      "sha256": "97721aa9092edb15c1357f2dac359dba72f63c81cc0e69408c65c229c91f50c1",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2024.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv",
+      "bytes": 2402841,
+      "retrieved_at_utc": "2026-10-27T15:16:29.363169+00:00",
+      "last_modified": "Mon, 06 Oct 2025 06:51:21 GMT",
+      "sha256": "a2aa58efe093f8aa0ad5aadf09f81d8ec690a1183bd2dde68d20e7f109a9c335",
+      "error": null
+    },
+    {
+      "file": "injuries_2024.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2024.csv",
+      "bytes": 816989,
+      "retrieved_at_utc": "2026-10-27T15:16:29.263463+00:00",
+      "last_modified": "Thu, 13 Feb 2025 07:16:35 GMT",
+      "sha256": "498bce8e13cb64b2ab9bb0ad6cb81d0a63c2ddb24016c9fc90c2de2126fae449",
+      "error": null
+    },
+    {
+      "file": "roster_2025.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2025.csv",
+      "bytes": 1010039,
+      "retrieved_at_utc": "2026-10-27T15:16:29.939956+00:00",
+      "last_modified": "Sat, 14 Mar 2026 07:33:08 GMT",
+      "sha256": "531ee5de386037bb17de3e3e3d50f7b4ed08789526bbaae9876fdd3dfb4d04ad",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2025.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv",
+      "bytes": 2401290,
+      "retrieved_at_utc": "2026-10-27T15:16:30.172126+00:00",
+      "last_modified": "Thu, 24 Sep 2026 12:50:32 GMT",
+      "sha256": "3fc2deb0e9ad86d34d4578cb80bb21c95253e088ee22ca028adf46f7485eff1f",
+      "error": null
+    },
+    {
+      "file": "injuries_2025.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv",
+      "bytes": 696006,
+      "retrieved_at_utc": "2026-10-27T15:16:30.234908+00:00",
+      "last_modified": "Mon, 07 Sep 2026 12:23:41 GMT",
+      "sha256": "873ca1606dd575bd01152508a243ef6b3a0f8f97b90b707217e62ee8c7ceb735",
+      "error": null
+    },
+    {
+      "file": "roster_2026.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv",
+      "bytes": 973921,
+      "retrieved_at_utc": "2026-10-27T15:16:30.080278+00:00",
+      "last_modified": "Tue, 27 Oct 2026 13:10:51 GMT",
+      "sha256": "bd71bc0d0715edfa2b5c98fc6c87d87a7f6186375004c799d44ef087c088762d",
+      "error": null
+    },
+    {
+      "file": "snap_counts_2026.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv",
+      "bytes": 895438,
+      "retrieved_at_utc": "2026-10-27T15:16:30.662749+00:00",
+      "last_modified": "Tue, 27 Oct 2026 11:08:32 GMT",
+      "sha256": "0994bd2c1126e06fdae2e130f379736e311c12c7dd0300c5958d6b2d86cd4098",
+      "error": null
+    },
+    {
+      "file": "injuries_2026.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+      "bytes": 244701,
+      "retrieved_at_utc": "2026-10-27T15:16:30.696811+00:00",
+      "last_modified": "Tue, 27 Oct 2026 13:08:39 GMT",
+      "sha256": "8f43bbc84087bd4d11a1658c9bb58e51eeb492e8f864a4ade25ea8d55c2b24a4",
+      "error": null
+    }
+  ]
+}

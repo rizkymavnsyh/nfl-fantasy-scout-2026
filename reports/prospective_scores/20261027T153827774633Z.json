@@ -1,0 +1,17 @@
+{
+  "snapshot_id": "20261027T153827774633Z",
+  "frozen_at_utc": "2026-10-27T15:38:27.774633+00:00",
+  "n_frozen": 384,
+  "n_scored": 0,
+  "n_pending": 384,
+  "evaluated_at_utc": "2026-10-28T10:03:18.234425+00:00",
+  "status": "Menunggu laga masa depan",
+  "missing_target_rule": "Zero only after final scores and player-stat rows for both teams are present.",
+  "model_version": "v5",
+  "model_name": "v3+75pct_v5_role_hurdle",
+  "lineup": {
+    "n_rosters": 0,
+    "n_weeks": 0,
+    "status": "Menunggu hasil pertandingan"
+  }
+}

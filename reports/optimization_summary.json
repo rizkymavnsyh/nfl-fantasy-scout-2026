@@ -1,0 +1,108 @@
+{
+  "promoted": false,
+  "retained_version": "v3",
+  "candidate_count": 61,
+  "reference_cv": {
+    "cv_mae": 4.3190443391944076,
+    "cv_rmse": 6.1762371393962745
+  },
+  "lowest_rmse_candidate": {
+    "model": "v3+50pct_v4_hurdle",
+    "cv_mae": 4.346685234385889,
+    "cv_rmse": 6.162507973806044
+  },
+  "selection_rule": "Minimum mean CV RMSE among candidates with CV MAE <= V3 and CV RMSE at least 0.25% lower than V3. Otherwise retain V3.",
+  "approaches": [
+    "12 new features from earlier team/position opportunity data",
+    "Position-specific regression",
+    "Nonzero-probability times conditional points",
+    "Recency sample weights with 0.65 and 0.85 per-season decay",
+    "Fixed blends with V3"
+  ],
+  "status": "No candidate met both validation requirements. V3 predictions and locked snapshots retained.",
+  "data_boundary": "2023/24 development folds only. Failed candidates were not replayed on 2025/26 for selection.",
+  "tolerance": {
+    "model": {
+      "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+      "within_3": 0.5213561776061776,
+      "within_5": 0.698238416988417,
+      "nonzero_n": 5688,
+      "nonzero_within_5": 0.6279887482419128
+    },
+    "baseline": {
+      "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+      "within_3": 0.4767133204633205,
+      "within_5": 0.6459942084942085,
+      "nonzero_n": 5688,
+      "nonzero_within_5": 0.5940576652601969
+    },
+    "by_position": {
+      "QB": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.44412607449856734,
+          "within_5": 0.5740210124164279,
+          "nonzero_n": 713,
+          "nonzero_within_5": 0.4670406732117812
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.3734479465138491,
+          "within_5": 0.4976122254059217,
+          "nonzero_n": 713,
+          "nonzero_within_5": 0.4375876577840112
+        }
+      },
+      "RB": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.5111001480019733,
+          "within_5": 0.6896891958559448,
+          "nonzero_n": 1552,
+          "nonzero_within_5": 0.6353092783505154
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4750863344844598,
+          "within_5": 0.6467686235816478,
+          "nonzero_n": 1552,
+          "nonzero_within_5": 0.6069587628865979
+        }
+      },
+      "TE": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.6128509719222462,
+          "within_5": 0.7742980561555075,
+          "nonzero_n": 1187,
+          "nonzero_within_5": 0.6983993260320135
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.5491360691144709,
+          "within_5": 0.7257019438444925,
+          "nonzero_n": 1187,
+          "nonzero_within_5": 0.6663858466722831
+        }
+      },
+      "WR": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.501189767995241,
+          "within_5": 0.7001784651992862,
+          "nonzero_n": 2236,
+          "nonzero_within_5": 0.6368515205724508
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.46995835812016656,
+          "within_5": 0.6478286734086853,
+          "nonzero_n": 2236,
+          "nonzero_within_5": 0.5966010733452594
+        }
+      }
+    }
+  },
+  "frozen_snapshots_unchanged": true,
+  "test_prediction_sha256": "6f950024751dcabc534f1ff280169ad64f7f9e28d96ea0da727ef10fe1e498aa"
+}

@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "same_week_outcomes_do_not_change_same_week_features": true,
+    "v2_enhanced_features_have_no_same_week_target_leakage": true,
+    "later_forecasts_respond_to_new_history": true,
+    "unique_player_season_week": true,
+    "test_seasons_frozen": true,
+    "missing_source_game_excluded_not_zero": true,
+    "reported_mae_matches_predictions": true,
+    "finite_next_game_forecasts": true
+  },
+  "test_n": 8288,
+  "forecast_n": 384
+}

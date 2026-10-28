@@ -1,0 +1,1224 @@
+{
+  "created_at": "2026-10-28T09:47:21.666551+00:00",
+  "selected_model": "market_hurdle+50pct_v6_market_mean",
+  "target": "Next scheduled game PPR fantasy points",
+  "positions": [
+    "QB",
+    "RB",
+    "WR",
+    "TE"
+  ],
+  "features": [
+    "fantasy_points_ppr_lag1",
+    "fantasy_points_ppr_mean3",
+    "fantasy_points_ppr_mean5",
+    "fantasy_points_ppr_season_mean",
+    "attempts_lag1",
+    "attempts_mean3",
+    "attempts_mean5",
+    "attempts_season_mean",
+    "passing_yards_lag1",
+    "passing_yards_mean3",
+    "passing_yards_mean5",
+    "passing_yards_season_mean",
+    "passing_tds_lag1",
+    "passing_tds_mean3",
+    "passing_tds_mean5",
+    "passing_tds_season_mean",
+    "passing_interceptions_lag1",
+    "passing_interceptions_mean3",
+    "passing_interceptions_mean5",
+    "passing_interceptions_season_mean",
+    "carries_lag1",
+    "carries_mean3",
+    "carries_mean5",
+    "carries_season_mean",
+    "rushing_yards_lag1",
+    "rushing_yards_mean3",
+    "rushing_yards_mean5",
+    "rushing_yards_season_mean",
+    "rushing_tds_lag1",
+    "rushing_tds_mean3",
+    "rushing_tds_mean5",
+    "rushing_tds_season_mean",
+    "targets_lag1",
+    "targets_mean3",
+    "targets_mean5",
+    "targets_season_mean",
+    "receptions_lag1",
+    "receptions_mean3",
+    "receptions_mean5",
+    "receptions_season_mean",
+    "receiving_yards_lag1",
+    "receiving_yards_mean3",
+    "receiving_yards_mean5",
+    "receiving_yards_season_mean",
+    "receiving_tds_lag1",
+    "receiving_tds_mean3",
+    "receiving_tds_mean5",
+    "receiving_tds_season_mean",
+    "target_share_lag1",
+    "target_share_mean3",
+    "target_share_mean5",
+    "target_share_season_mean",
+    "opponent_allowed_mean5",
+    "home",
+    "rest",
+    "weeks_since_seen",
+    "history_games",
+    "week",
+    "ppr_std5",
+    "position",
+    "v2_opportunities_mean3",
+    "v2_opportunities_mean5",
+    "v2_no_td_ppr_mean3",
+    "v2_no_td_ppr_mean5",
+    "v2_passing_air_yards_mean3",
+    "v2_passing_air_yards_mean5",
+    "v2_receiving_air_yards_mean3",
+    "v2_receiving_air_yards_mean5",
+    "v2_receiving_yards_after_catch_mean3",
+    "v2_receiving_yards_after_catch_mean5",
+    "v2_wopr_mean3",
+    "v2_wopr_mean5",
+    "v2_air_yards_share_mean3",
+    "v2_air_yards_share_mean5",
+    "v2_catch_rate_mean3",
+    "v2_catch_rate_mean5",
+    "v2_yards_per_target_mean3",
+    "v2_yards_per_target_mean5",
+    "v2_yards_per_carry_mean3",
+    "v2_yards_per_carry_mean5",
+    "v2_ppr_zero_mean3",
+    "v2_ppr_zero_mean5",
+    "v2_no_offense_mean3",
+    "v2_no_offense_mean5",
+    "v2_ppr_median3",
+    "v2_ppr_median5",
+    "v2_ppr_ewm3",
+    "v2_ppr_ewm6",
+    "v2_career_fantasy_points_ppr_mean8",
+    "v2_career_opportunities_mean8",
+    "v2_career_no_td_ppr_mean8",
+    "v2_ppr_trend",
+    "v2_opportunity_trend",
+    "v2_td_dependency",
+    "v2_recent_consistency",
+    "v5_snap_pct_lag1",
+    "v5_snap_pct_mean3",
+    "v5_snap_count_mean3",
+    "v5_snap_pct_trend",
+    "v5_snap_weeks_ago",
+    "v5_snap_history_available",
+    "v5_injury_prev_report",
+    "v5_injury_prev_out",
+    "v5_injury_prev_questionable",
+    "v5_injury_prev_dnp",
+    "v5_injury_prev_limited",
+    "v5_injury_previous_week_missing",
+    "v5_chances_per_snap3",
+    "v5_qb_attempts_per_snap3",
+    "v5_points_per_snap3",
+    "v6_team_spread",
+    "v6_total_line",
+    "v6_implied_team_total",
+    "v6_implied_opp_total",
+    "v6_dome",
+    "v6_div_game",
+    "v6_form_x_implied"
+  ],
+  "feature_count": 117,
+  "protocol": {
+    "training_seasons": "2019â€“2024",
+    "validation_seasons": [
+      2023,
+      2024
+    ],
+    "test_seasons": [
+      2025,
+      2026
+    ],
+    "latest_complete_2026_week": 6,
+    "selection": "Minimize full-cohort mean CV RMSE, requiring MAE <= V5 and RMSE <= 99.75% of V5. Otherwise retain V5.",
+    "candidate_universe": "Offensive opportunity earlier in same season, last seen <=3 weeks, team scheduled",
+    "excluded": "Week 1, unobserved rookies, K, DST, IDP, bye weeks",
+    "injury_info": "No live injury reports or official active roster filter",
+    "latest_observed_2026_week": 7,
+    "partial_week_note": "Week 7 player stats omit DALâ€“PHI in this source snapshot. That game is excluded from test labels and histories, never filled with false zeros.",
+    "test_status": "Previously inspected repeatedly. Retrospective replay, not an untouched independent holdout.",
+    "time_policy": "Spread and total lines from the nflverse schedule. Historical rows use the archived closing line; live forecasts use the line published at refresh time. Lines missing for later weeks are median-imputed. No weather or game-day outcomes."
+  },
+  "train": {
+    "n": 36290,
+    "mae": 4.143374165438502,
+    "rmse": 5.778112223436699,
+    "r2": 0.49001396078918547
+  },
+  "test": {
+    "n": 8288,
+    "mae": 4.28199608224227,
+    "rmse": 6.025276432152219,
+    "r2": 0.4258915037592035
+  },
+  "baseline": {
+    "n": 8288,
+    "mae": 4.783471685971685,
+    "rmse": 6.774928312760573,
+    "r2": 0.27414574130379255
+  },
+  "cv_candidates": [
+    {
+      "model": "v5_reference",
+      "weights": {
+        "lgb_mean15": 0.1875,
+        "lgb_fair": 0.0625,
+        "v5_role_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.250112804120475,
+          "rmse": 5.998194961965047,
+          "r2": 0.4244931847682548
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.372350579527341,
+          "rmse": 6.19983039591143,
+          "r2": 0.4154678746497238
+        }
+      ],
+      "cv_mae": 4.311231691823908,
+      "cv_rmse": 6.099012678938239
+    },
+    {
+      "model": "v6_market_hurdle",
+      "weights": {
+        "v6_market_hurdle": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.199197854005742,
+          "rmse": 5.9362477596129475,
+          "r2": 0.43631905632200974
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348913792741202,
+          "rmse": 6.143756736956098,
+          "r2": 0.4259935276750506
+        }
+      ],
+      "cv_mae": 4.274055823373472,
+      "cv_rmse": 6.040002248284523
+    },
+    {
+      "model": "v5+25pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_hurdle": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.230456685474399,
+          "rmse": 5.9702123739981285,
+          "r2": 0.4298503316613307
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3608915466613105,
+          "rmse": 6.176245756968018,
+          "r2": 0.4199066275761726
+        }
+      ],
+      "cv_mae": 4.295674116067855,
+      "cv_rmse": 6.073229065483073
+    },
+    {
+      "model": "v5+50pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_hurdle": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.215142662311747,
+          "rmse": 5.950511117870523,
+          "r2": 0.4336070258846484
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.352436827473639,
+          "rmse": 6.159006267686576,
+          "r2": 0.42314048738920995
+        }
+      ],
+      "cv_mae": 4.283789744892693,
+      "cv_rmse": 6.054758692778549
+    },
+    {
+      "model": "v5+75pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.204728969015808,
+          "rmse": 5.939173605942481,
+          "r2": 0.43576326743820815
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348330243273601,
+          "rmse": 6.1481653038023065,
+          "r2": 0.425169454088836
+        }
+      ],
+      "cv_mae": 4.276529606144704,
+      "cv_rmse": 6.0436694548723935
+    },
+    {
+      "model": "v6_market_mean",
+      "weights": {
+        "v6_market_mean": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.200620059361067,
+          "rmse": 5.940513391003322,
+          "r2": 0.4355086726877697
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3525707608857624,
+          "rmse": 6.148850057965869,
+          "r2": 0.4250414030329983
+        }
+      ],
+      "cv_mae": 4.276595410123415,
+      "cv_rmse": 6.044681724484596
+    },
+    {
+      "model": "v5+25pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.227277973923357,
+          "rmse": 5.964371367233787,
+          "r2": 0.43096540723085264
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.358783272405538,
+          "rmse": 6.172582134172797,
+          "r2": 0.4205946225364504
+        }
+      ],
+      "cv_mae": 4.293030623164448,
+      "cv_rmse": 6.068476750703292
+    },
+    {
+      "model": "v5+50pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.21070655898884,
+          "rmse": 5.943406394115627,
+          "r2": 0.4349587293716378
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.350679322911609,
+          "rmse": 6.154955020767394,
+          "r2": 0.4238991265625718
+        }
+      ],
+      "cv_mae": 4.280692940950225,
+      "cv_rmse": 6.0491807074415105
+    },
+    {
+      "model": "v5+75pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_mean": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.20193167007774,
+          "rmse": 5.93543630070711,
+          "r2": 0.43647315119061014
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348778364398939,
+          "rmse": 6.147031824527101,
+          "r2": 0.4253813867280878
+        }
+      ],
+      "cv_mae": 4.27535501723834,
+      "cv_rmse": 6.0412340626171055
+    },
+    {
+      "model": "v6_market_fair",
+      "weights": {
+        "v6_market_fair": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 3.997658359063022,
+          "rmse": 6.042475592206243,
+          "r2": 0.4159646625964447
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.116173560435353,
+          "rmse": 6.256685000916311,
+          "r2": 0.40469799172211707
+        }
+      ],
+      "cv_mae": 4.056915959749188,
+      "cv_rmse": 6.149580296561277
+    },
+    {
+      "model": "v5+25pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_fair": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.159986970134963,
+          "rmse": 5.966447298886241,
+          "r2": 0.430569227172761
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.287284964496979,
+          "rmse": 6.181278074290246,
+          "r2": 0.4189609387844704
+        }
+      ],
+      "cv_mae": 4.223635967315971,
+      "cv_rmse": 6.073862686588243
+    },
+    {
+      "model": "v5+50pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_fair": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.086734273462127,
+          "rmse": 5.963282511059869,
+          "r2": 0.4311731542789615
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.214917546991332,
+          "rmse": 6.1846315632663185,
+          "r2": 0.4183303130081183
+        }
+      ],
+      "cv_mae": 4.150825910226729,
+      "cv_rmse": 6.073957037163094
+    },
+    {
+      "model": "v5+75pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_fair": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.032636777452827,
+          "rmse": 5.988745913020486,
+          "r2": 0.4263049660868561
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.156761842703648,
+          "rmse": 6.209855373759783,
+          "r2": 0.4135759973206671
+        }
+      ],
+      "cv_mae": 4.094699310078237,
+      "cv_rmse": 6.0993006433901344
+    },
+    {
+      "model": "market_hurdle+25pct_v6_market_mean",
+      "weights": {
+        "v6_market_hurdle": 0.75,
+        "v6_market_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.193968446305927,
+          "rmse": 5.928996327746281,
+          "r2": 0.4376953457159234
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.345450919980032,
+          "rmse": 6.138352443600988,
+          "r2": 0.42700292148141294
+        }
+      ],
+      "cv_mae": 4.269709683142979,
+      "cv_rmse": 6.033674385673635
+    },
+    {
+      "model": "market_hurdle+50pct_v6_market_mean",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192621962647597,
+          "rmse": 5.927289523798542,
+          "r2": 0.438019044908188
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.344961360747278,
+          "rmse": 6.13740013199895,
+          "r2": 0.42718069864319164
+        }
+      ],
+      "cv_mae": 4.2687916616974375,
+      "cv_rmse": 6.032344827898746
+    },
+    {
+      "model": "market_hurdle+25pct_v6_market_fair",
+      "weights": {
+        "v6_market_hurdle": 0.75,
+        "v6_market_fair": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.125642190548078,
+          "rmse": 5.932070050286465,
+          "r2": 0.4371121723061452
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.270453401755443,
+          "rmse": 6.144362271379318,
+          "r2": 0.4258803728670184
+        }
+      ],
+      "cv_mae": 4.19804779615176,
+      "cv_rmse": 6.038216160832892
+    },
+    {
+      "model": "market_hurdle+50pct_v6_market_fair",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_fair": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.068302606510176,
+          "rmse": 5.948529783959567,
+          "r2": 0.43398414534659613
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.204991138541279,
+          "rmse": 6.163526702135282,
+          "r2": 0.42229339860551884
+        }
+      ],
+      "cv_mae": 4.136646872525727,
+      "cv_rmse": 6.056028243047425
+    }
+  ],
+  "by_season": {
+    "2025": {
+      "model": {
+        "n": 6158,
+        "mae": 4.244053679319269,
+        "rmse": 5.998450035626677,
+        "r2": 0.42685793159733887
+      },
+      "baseline": {
+        "n": 6158,
+        "mae": 4.6849003464328245,
+        "rmse": 6.659375631525634,
+        "r2": 0.29359913824563677
+      },
+      "v5": {
+        "n": 6158,
+        "mae": 4.283814667628025,
+        "rmse": 6.071345546634188,
+        "r2": 0.4128431964502294
+      }
+    },
+    "2026": {
+      "model": {
+        "n": 2130,
+        "mae": 4.391690597359566,
+        "rmse": 6.102170374930085,
+        "r2": 0.42293280905986397
+      },
+      "baseline": {
+        "n": 2130,
+        "mae": 5.0684492957746485,
+        "rmse": 7.098427907098104,
+        "r2": 0.21912399693412088
+      },
+      "v5": {
+        "n": 2130,
+        "mae": 4.418483670103847,
+        "rmse": 6.1706640088606735,
+        "r2": 0.4099055572785175
+      }
+    }
+  },
+  "by_position": {
+    "QB": {
+      "model": {
+        "n": 1047,
+        "mae": 5.37549915155118,
+        "rmse": 7.267714197733515,
+        "r2": 0.472666541085473
+      },
+      "baseline": {
+        "n": 1047,
+        "mae": 6.421073861827444,
+        "rmse": 8.723244304616609,
+        "r2": 0.24029371685068546
+      },
+      "v5": {
+        "n": 1047,
+        "mae": 5.523830892410344,
+        "rmse": 7.488417375155354,
+        "r2": 0.4401525148573391
+      }
+    },
+    "RB": {
+      "model": {
+        "n": 2027,
+        "mae": 4.403948795589867,
+        "rmse": 6.209837020246298,
+        "r2": 0.4393799250400283
+      },
+      "baseline": {
+        "n": 2027,
+        "mae": 4.793671106725867,
+        "rmse": 6.807920277729524,
+        "r2": 0.32619044721664747
+      },
+      "v5": {
+        "n": 2027,
+        "mae": 4.44548793004451,
+        "rmse": 6.278824878777824,
+        "r2": 0.4268543747974377
+      }
+    },
+    "TE": {
+      "model": {
+        "n": 1852,
+        "mae": 3.4809277774919423,
+        "rmse": 4.950782289569599,
+        "r2": 0.3504685605765243
+      },
+      "baseline": {
+        "n": 1852,
+        "mae": 3.896033297336213,
+        "rmse": 5.58488136459061,
+        "r2": 0.17342850508590746
+      },
+      "v5": {
+        "n": 1852,
+        "mae": 3.4853684659558897,
+        "rmse": 4.979616840481268,
+        "r2": 0.34288047157767787
+      }
+    },
+    "WR": {
+      "model": {
+        "n": 3362,
+        "mae": 4.3092068606109795,
+        "rmse": 6.024604813737711,
+        "r2": 0.3485998477033623
+      },
+      "baseline": {
+        "n": 3362,
+        "mae": 4.7561939321832245,
+        "rmse": 6.657964329008187,
+        "r2": 0.2044386887518903
+      },
+      "v5": {
+        "n": 3362,
+        "mae": 4.325325271585489,
+        "rmse": 6.062060707653263,
+        "r2": 0.3404749594411699
+      }
+    }
+  },
+  "interval": {
+    "nominal": 0.8,
+    "coverage_test": 0.7948841698841699,
+    "half_width_by_position": {
+      "QB": 9.119197212931253,
+      "RB": 6.725462927694059,
+      "TE": 5.243542281344375,
+      "WR": 6.941081586491452
+    },
+    "description": "Empirical historical CV residuals, not an individual guarantee."
+  },
+  "missing_stat_outcomes": 1816,
+  "prediction_week": 8,
+  "prediction_season": 2026,
+  "mae_improvement_pct": 10.483507307048026,
+  "version": "v6",
+  "version_comparison": {
+    "old": {
+      "n": 8288,
+      "mae": 4.4506481847821995,
+      "rmse": 6.2220425342895505,
+      "r2": 0.3877821721351872
+    },
+    "v2": {
+      "n": 8288,
+      "mae": 4.150347939663023,
+      "rmse": 6.388276426519757,
+      "r2": 0.3546320092933867
+    },
+    "new": {
+      "n": 8288,
+      "mae": 4.334916589401347,
+      "rmse": 6.1825883996948745,
+      "r2": 0.3955217342525442
+    },
+    "cv_mae_old": 4.408899372297379,
+    "cv_mae_new": 4.3190443391944076,
+    "cv_rmse_old": 6.187436323967404,
+    "cv_rmse_new": 6.1762371393962745,
+    "evaluation_status": "Repeated retrospective replay on already-inspected 2025/26 data. Independent future-week verification still required.",
+    "mae_reduction_from_v1_pct": 2.6003312456052052,
+    "rmse_reduction_from_v2_pct": 3.219773427007731
+  },
+  "forecast_snapshot": {
+    "as_of_utc": "2026-10-27T15:26:37.659951+00:00",
+    "as_of_wib": "27 Oct 2026 22:26 WIB",
+    "season": 2026,
+    "season_label": "Musim reguler 2026 · berlanjut ke Januari 2027",
+    "latest_complete_week": 7,
+    "latest_observed_week": 7,
+    "next_week": 8,
+    "next_kickoff_utc": "2026-10-30T00:15:00+00:00",
+    "next_kickoff_wib": "30 Oct 2026 07:15 WIB",
+    "missing_completed_games": [],
+    "sources": [
+      {
+        "file": "stats_player_week_2026.csv",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
+        "last_modified": null,
+        "bytes": 3315437,
+        "sha256": "24b95fd79ea1ea96354ccbe444e21cc75df3a7d466b1ccf30a5c93fcf481df37"
+      },
+      {
+        "file": "games.csv",
+        "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+        "last_modified": null,
+        "bytes": 2186549,
+        "sha256": "7c7a77f342fc4927adbd84ec2b94997b587cfbf9db4496c02e163cf1483b686f"
+      }
+    ],
+    "candidate_count": 384,
+    "next_game_per_team": true,
+    "history_training_n": 44605,
+    "coverage": "Next scheduled regular-season game for each currently eligible player; no season-total or playoff forecasts.",
+    "update_mode": "Manual refresh command, not an automatic live feed."
+  },
+  "pregame_comparison": {
+    "promoted": true,
+    "full_cohort": {
+      "n": 8288,
+      "model": {
+        "n": 8288,
+        "mae": 4.318424341285542,
+        "rmse": 6.09702466726748,
+        "r2": 0.4121372728687406
+      },
+      "v3": {
+        "n": 8288,
+        "mae": 4.334916589401347,
+        "rmse": 6.1825883996948745,
+        "r2": 0.3955217342525442
+      },
+      "baseline": {
+        "n": 8288,
+        "mae": 4.783471685971685,
+        "rmse": 6.774928312760573,
+        "r2": 0.27414574130379255
+      },
+      "tolerance": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.5129102316602316,
+          "within_5": 0.6987210424710425,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.629395218002813
+        },
+        "v3": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.5213561776061776,
+          "within_5": 0.698238416988417,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.6279887482419128
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4767133204633205,
+          "within_5": 0.6459942084942085,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.5940576652601969
+        }
+      }
+    },
+    "fantasy_pool": {
+      "n": 6193,
+      "model": {
+        "n": 6193,
+        "mae": 5.038467307295559,
+        "rmse": 6.745177944086156,
+        "r2": 0.34177867758992053
+      },
+      "v3": {
+        "n": 6193,
+        "mae": 5.059020898590594,
+        "rmse": 6.8406068986246105,
+        "r2": 0.3230222544127217
+      },
+      "baseline": {
+        "n": 6193,
+        "mae": 5.583828300769686,
+        "rmse": 7.480291489512389,
+        "r2": 0.19049009421389296
+      },
+      "tolerance": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4022283222993703,
+          "within_5": 0.6236072985628935,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.6017156862745098
+        },
+        "v3": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4167608590343937,
+          "within_5": 0.6247376069756176,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.6019199346405228
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.38446633295656385,
+          "within_5": 0.5708057484256418,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.5643382352941176
+        }
+      }
+    },
+    "definition": "QB prior mean3 attempts>=15 or prior snap percentage>=0.5. RB/WR/TE prior mean3 chances>=5 or snap mean3>=0.25. Snap age<=2 weeks when known.",
+    "cohort_note": "Full cohort retained for all headline model comparisons. Fantasy-pool results reported separately with the identical subset for V3, V5 and baseline.",
+    "time_note": "Strictly prior-week snaps and injury reports. Dated injury updates after the target date excluded. Archived snap first-publication timestamps are unavailable, so historical results are replay rather than certified point-in-time reconstruction.",
+    "features": [
+      "v5_snap_pct_lag1",
+      "v5_snap_pct_mean3",
+      "v5_snap_count_mean3",
+      "v5_snap_pct_trend",
+      "v5_snap_weeks_ago",
+      "v5_snap_history_available",
+      "v5_injury_prev_report",
+      "v5_injury_prev_out",
+      "v5_injury_prev_questionable",
+      "v5_injury_prev_dnp",
+      "v5_injury_prev_limited",
+      "v5_injury_previous_week_missing",
+      "v5_chances_per_snap3",
+      "v5_qb_attempts_per_snap3",
+      "v5_points_per_snap3"
+    ],
+    "source_coverage": {
+      "snap_rows": 183217,
+      "snap_rows_mapped": 123578,
+      "ambiguous_player_ids_removed": 1
+    },
+    "validation": {
+      "v3": {
+        "model": "v3_reference",
+        "weights": {
+          "lgb_mean15": 0.75,
+          "lgb_fair": 0.25
+        },
+        "folds": [
+          {
+            "validation_season": 2023,
+            "train_n": 24062,
+            "n": 6130,
+            "mae": 4.271663859746896,
+            "rmse": 6.0925353929955595,
+            "r2": 0.4062475193189212
+          },
+          {
+            "validation_season": 2024,
+            "train_n": 30192,
+            "n": 6098,
+            "mae": 4.36642481864192,
+            "rmse": 6.259938885796989,
+            "r2": 0.4040786388543781
+          }
+        ],
+        "cv_mae": 4.3190443391944076,
+        "cv_rmse": 6.1762371393962745
+      },
+      "selected": {
+        "model": "v3+75pct_v5_role_hurdle",
+        "weights": {
+          "lgb_mean15": 0.1875,
+          "lgb_fair": 0.0625,
+          "v5_role_hurdle": 0.75
+        },
+        "folds": [
+          {
+            "validation_season": 2023,
+            "train_n": 24062,
+            "n": 6130,
+            "mae": 4.250112804120475,
+            "rmse": 5.998194961965047,
+            "r2": 0.4244931847682548
+          },
+          {
+            "validation_season": 2024,
+            "train_n": 30192,
+            "n": 6098,
+            "mae": 4.372350579527341,
+            "rmse": 6.19983039591143,
+            "r2": 0.4154678746497238
+          }
+        ],
+        "cv_mae": 4.311231691823908,
+        "cv_rmse": 6.099012678938239
+      }
+    },
+    "replay_status": "2025/26 already inspected. Retrospective replay only."
+  },
+  "tolerance": {
+    "model": {
+      "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+      "within_3": 0.517253861003861,
+      "within_5": 0.6994449806949807,
+      "nonzero_n": 5688,
+      "nonzero_within_5": 0.6299226441631505
+    },
+    "v5": {
+      "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+      "within_3": 0.5129102316602316,
+      "within_5": 0.6987210424710425,
+      "nonzero_n": 5688,
+      "nonzero_within_5": 0.629395218002813
+    },
+    "baseline": {
+      "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+      "within_3": 0.4767133204633205,
+      "within_5": 0.6459942084942085,
+      "nonzero_n": 5688,
+      "nonzero_within_5": 0.5940576652601969
+    }
+  },
+  "market_comparison": {
+    "promoted": true,
+    "full_cohort": {
+      "n": 8288,
+      "model": {
+        "n": 8288,
+        "mae": 4.28199608224227,
+        "rmse": 6.025276432152219,
+        "r2": 0.4258915037592035
+      },
+      "v5": {
+        "n": 8288,
+        "mae": 4.318424341285542,
+        "rmse": 6.097024667267481,
+        "r2": 0.41213727286874047
+      },
+      "baseline": {
+        "n": 8288,
+        "mae": 4.783471685971685,
+        "rmse": 6.774928312760573,
+        "r2": 0.27414574130379255
+      },
+      "tolerance": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.517253861003861,
+          "within_5": 0.6994449806949807,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.6299226441631505
+        },
+        "v5": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.5129102316602316,
+          "within_5": 0.6987210424710425,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.629395218002813
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4767133204633205,
+          "within_5": 0.6459942084942085,
+          "nonzero_n": 5688,
+          "nonzero_within_5": 0.5940576652601969
+        }
+      }
+    },
+    "fantasy_pool": {
+      "n": 6193,
+      "model": {
+        "n": 6193,
+        "mae": 4.9853031615830865,
+        "rmse": 6.6599153115359115,
+        "r2": 0.358314039375637
+      },
+      "v5": {
+        "n": 6193,
+        "mae": 5.038467307295559,
+        "rmse": 6.745177944086156,
+        "r2": 0.34177867758992053
+      },
+      "baseline": {
+        "n": 6193,
+        "mae": 5.583828300769686,
+        "rmse": 7.480291489512389,
+        "r2": 0.19049009421389296
+      },
+      "tolerance": {
+        "model": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4090101727757145,
+          "within_5": 0.6242531890844502,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.6017156862745098
+        },
+        "v5": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.4022283222993703,
+          "within_5": 0.6236072985628935,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.6017156862745098
+        },
+        "baseline": {
+          "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+          "within_3": 0.38446633295656385,
+          "within_5": 0.5708057484256418,
+          "nonzero_n": 4896,
+          "nonzero_within_5": 0.5643382352941176
+        }
+      }
+    },
+    "features": [
+      "v6_team_spread",
+      "v6_total_line",
+      "v6_implied_team_total",
+      "v6_implied_opp_total",
+      "v6_dome",
+      "v6_div_game",
+      "v6_form_x_implied"
+    ],
+    "time_note": "Spread and total lines from the nflverse schedule. Historical rows use the archived closing line; live forecasts use the line published at refresh time. Lines missing for later weeks are median-imputed. No weather or game-day outcomes.",
+    "validation": {
+      "v5": {
+        "model": "v5_reference",
+        "weights": {
+          "lgb_mean15": 0.1875,
+          "lgb_fair": 0.0625,
+          "v5_role_hurdle": 0.75
+        },
+        "folds": [
+          {
+            "validation_season": 2023,
+            "train_n": 24062,
+            "n": 6130,
+            "mae": 4.250112804120475,
+            "rmse": 5.998194961965047,
+            "r2": 0.4244931847682548
+          },
+          {
+            "validation_season": 2024,
+            "train_n": 30192,
+            "n": 6098,
+            "mae": 4.372350579527341,
+            "rmse": 6.19983039591143,
+            "r2": 0.4154678746497238
+          }
+        ],
+        "cv_mae": 4.311231691823908,
+        "cv_rmse": 6.099012678938239
+      },
+      "selected": {
+        "model": "market_hurdle+50pct_v6_market_mean",
+        "weights": {
+          "v6_market_hurdle": 0.5,
+          "v6_market_mean": 0.5
+        },
+        "folds": [
+          {
+            "validation_season": 2023,
+            "train_n": 24062,
+            "n": 6130,
+            "mae": 4.192621962647597,
+            "rmse": 5.927289523798542,
+            "r2": 0.438019044908188
+          },
+          {
+            "validation_season": 2024,
+            "train_n": 30192,
+            "n": 6098,
+            "mae": 4.344961360747278,
+            "rmse": 6.13740013199895,
+            "r2": 0.42718069864319164
+          }
+        ],
+        "cv_mae": 4.2687916616974375,
+        "cv_rmse": 6.032344827898746
+      }
+    },
+    "replay_status": "2025/26 previously inspected for earlier versions. V6 selection used 2023/24 only; test scored once after selection."
+  },
+  "feature_importance": {
+    "v6_form_x_implied": 0.19566827277140633,
+    "v2_ppr_ewm3": 0.17154650945287545,
+    "v5_snap_pct_lag1": 0.12378862387892839,
+    "v2_career_fantasy_points_ppr_mean8": 0.08403010816133077,
+    "fantasy_points_ppr_lag1": 0.08015447914394663,
+    "v2_career_no_td_ppr_mean8": 0.04964804559207239,
+    "v2_ppr_ewm6": 0.023735237749714876,
+    "v5_snap_pct_trend": 0.0219907317966173,
+    "fantasy_points_ppr_season_mean": 0.02107223183329987,
+    "v2_career_opportunities_mean8": 0.015234741934635775,
+    "v6_implied_team_total": 0.012971952194700211,
+    "v2_opportunities_mean3": 0.011676244038634362,
+    "rushing_yards_lag1": 0.010645986528827076,
+    "v2_no_offense_mean3": 0.008127100760244272,
+    "v5_snap_pct_mean3": 0.0068729284314731,
+    "v6_total_line": 0.005377775369930336,
+    "carries_lag1": 0.005297516417176672,
+    "v2_no_td_ppr_mean3": 0.005107869337963497,
+    "carries_season_mean": 0.004914885466672834,
+    "target_share_season_mean": 0.004446415240445348
+  }
+}

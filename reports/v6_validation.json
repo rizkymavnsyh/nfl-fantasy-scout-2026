@@ -1,0 +1,537 @@
+{
+  "reference": {
+    "model": "v5_reference",
+    "weights": {
+      "lgb_mean15": 0.1875,
+      "lgb_fair": 0.0625,
+      "v5_role_hurdle": 0.75
+    },
+    "folds": [
+      {
+        "validation_season": 2023,
+        "train_n": 24062,
+        "n": 6130,
+        "mae": 4.250112804120475,
+        "rmse": 5.998194961965047,
+        "r2": 0.4244931847682548
+      },
+      {
+        "validation_season": 2024,
+        "train_n": 30192,
+        "n": 6098,
+        "mae": 4.372350579527341,
+        "rmse": 6.19983039591143,
+        "r2": 0.4154678746497238
+      }
+    ],
+    "cv_mae": 4.311231691823908,
+    "cv_rmse": 6.099012678938239
+  },
+  "selected": {
+    "model": "market_hurdle+50pct_v6_market_mean",
+    "weights": {
+      "v6_market_hurdle": 0.5,
+      "v6_market_mean": 0.5
+    },
+    "folds": [
+      {
+        "validation_season": 2023,
+        "train_n": 24062,
+        "n": 6130,
+        "mae": 4.192621962647597,
+        "rmse": 5.927289523798542,
+        "r2": 0.438019044908188
+      },
+      {
+        "validation_season": 2024,
+        "train_n": 30192,
+        "n": 6098,
+        "mae": 4.344961360747278,
+        "rmse": 6.13740013199895,
+        "r2": 0.42718069864319164
+      }
+    ],
+    "cv_mae": 4.2687916616974375,
+    "cv_rmse": 6.032344827898746
+  },
+  "candidates": [
+    {
+      "model": "v5_reference",
+      "weights": {
+        "lgb_mean15": 0.1875,
+        "lgb_fair": 0.0625,
+        "v5_role_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.250112804120475,
+          "rmse": 5.998194961965047,
+          "r2": 0.4244931847682548
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.372350579527341,
+          "rmse": 6.19983039591143,
+          "r2": 0.4154678746497238
+        }
+      ],
+      "cv_mae": 4.311231691823908,
+      "cv_rmse": 6.099012678938239
+    },
+    {
+      "model": "v6_market_hurdle",
+      "weights": {
+        "v6_market_hurdle": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.199197854005742,
+          "rmse": 5.9362477596129475,
+          "r2": 0.43631905632200974
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348913792741202,
+          "rmse": 6.143756736956098,
+          "r2": 0.4259935276750506
+        }
+      ],
+      "cv_mae": 4.274055823373472,
+      "cv_rmse": 6.040002248284523
+    },
+    {
+      "model": "v5+25pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_hurdle": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.230456685474399,
+          "rmse": 5.9702123739981285,
+          "r2": 0.4298503316613307
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3608915466613105,
+          "rmse": 6.176245756968018,
+          "r2": 0.4199066275761726
+        }
+      ],
+      "cv_mae": 4.295674116067855,
+      "cv_rmse": 6.073229065483073
+    },
+    {
+      "model": "v5+50pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_hurdle": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.215142662311747,
+          "rmse": 5.950511117870523,
+          "r2": 0.4336070258846484
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.352436827473639,
+          "rmse": 6.159006267686576,
+          "r2": 0.42314048738920995
+        }
+      ],
+      "cv_mae": 4.283789744892693,
+      "cv_rmse": 6.054758692778549
+    },
+    {
+      "model": "v5+75pct_v6_market_hurdle",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.204728969015808,
+          "rmse": 5.939173605942481,
+          "r2": 0.43576326743820815
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348330243273601,
+          "rmse": 6.1481653038023065,
+          "r2": 0.425169454088836
+        }
+      ],
+      "cv_mae": 4.276529606144704,
+      "cv_rmse": 6.0436694548723935
+    },
+    {
+      "model": "v6_market_mean",
+      "weights": {
+        "v6_market_mean": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.200620059361067,
+          "rmse": 5.940513391003322,
+          "r2": 0.4355086726877697
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.3525707608857624,
+          "rmse": 6.148850057965869,
+          "r2": 0.4250414030329983
+        }
+      ],
+      "cv_mae": 4.276595410123415,
+      "cv_rmse": 6.044681724484596
+    },
+    {
+      "model": "v5+25pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.227277973923357,
+          "rmse": 5.964371367233787,
+          "r2": 0.43096540723085264
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.358783272405538,
+          "rmse": 6.172582134172797,
+          "r2": 0.4205946225364504
+        }
+      ],
+      "cv_mae": 4.293030623164448,
+      "cv_rmse": 6.068476750703292
+    },
+    {
+      "model": "v5+50pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.21070655898884,
+          "rmse": 5.943406394115627,
+          "r2": 0.4349587293716378
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.350679322911609,
+          "rmse": 6.154955020767394,
+          "r2": 0.4238991265625718
+        }
+      ],
+      "cv_mae": 4.280692940950225,
+      "cv_rmse": 6.0491807074415105
+    },
+    {
+      "model": "v5+75pct_v6_market_mean",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_mean": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.20193167007774,
+          "rmse": 5.93543630070711,
+          "r2": 0.43647315119061014
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.348778364398939,
+          "rmse": 6.147031824527101,
+          "r2": 0.4253813867280878
+        }
+      ],
+      "cv_mae": 4.27535501723834,
+      "cv_rmse": 6.0412340626171055
+    },
+    {
+      "model": "v6_market_fair",
+      "weights": {
+        "v6_market_fair": 1.0
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 3.997658359063022,
+          "rmse": 6.042475592206243,
+          "r2": 0.4159646625964447
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.116173560435353,
+          "rmse": 6.256685000916311,
+          "r2": 0.40469799172211707
+        }
+      ],
+      "cv_mae": 4.056915959749188,
+      "cv_rmse": 6.149580296561277
+    },
+    {
+      "model": "v5+25pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.140625,
+        "lgb_fair": 0.046875,
+        "v5_role_hurdle": 0.5625,
+        "v6_market_fair": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.159986970134963,
+          "rmse": 5.966447298886241,
+          "r2": 0.430569227172761
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.287284964496979,
+          "rmse": 6.181278074290246,
+          "r2": 0.4189609387844704
+        }
+      ],
+      "cv_mae": 4.223635967315971,
+      "cv_rmse": 6.073862686588243
+    },
+    {
+      "model": "v5+50pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.09375,
+        "lgb_fair": 0.03125,
+        "v5_role_hurdle": 0.375,
+        "v6_market_fair": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.086734273462127,
+          "rmse": 5.963282511059869,
+          "r2": 0.4311731542789615
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.214917546991332,
+          "rmse": 6.1846315632663185,
+          "r2": 0.4183303130081183
+        }
+      ],
+      "cv_mae": 4.150825910226729,
+      "cv_rmse": 6.073957037163094
+    },
+    {
+      "model": "v5+75pct_v6_market_fair",
+      "weights": {
+        "lgb_mean15": 0.046875,
+        "lgb_fair": 0.015625,
+        "v5_role_hurdle": 0.1875,
+        "v6_market_fair": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.032636777452827,
+          "rmse": 5.988745913020486,
+          "r2": 0.4263049660868561
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.156761842703648,
+          "rmse": 6.209855373759783,
+          "r2": 0.4135759973206671
+        }
+      ],
+      "cv_mae": 4.094699310078237,
+      "cv_rmse": 6.0993006433901344
+    },
+    {
+      "model": "market_hurdle+25pct_v6_market_mean",
+      "weights": {
+        "v6_market_hurdle": 0.75,
+        "v6_market_mean": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.193968446305927,
+          "rmse": 5.928996327746281,
+          "r2": 0.4376953457159234
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.345450919980032,
+          "rmse": 6.138352443600988,
+          "r2": 0.42700292148141294
+        }
+      ],
+      "cv_mae": 4.269709683142979,
+      "cv_rmse": 6.033674385673635
+    },
+    {
+      "model": "market_hurdle+50pct_v6_market_mean",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192621962647597,
+          "rmse": 5.927289523798542,
+          "r2": 0.438019044908188
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.344961360747278,
+          "rmse": 6.13740013199895,
+          "r2": 0.42718069864319164
+        }
+      ],
+      "cv_mae": 4.2687916616974375,
+      "cv_rmse": 6.032344827898746
+    },
+    {
+      "model": "market_hurdle+25pct_v6_market_fair",
+      "weights": {
+        "v6_market_hurdle": 0.75,
+        "v6_market_fair": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.125642190548078,
+          "rmse": 5.932070050286465,
+          "r2": 0.4371121723061452
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.270453401755443,
+          "rmse": 6.144362271379318,
+          "r2": 0.4258803728670184
+        }
+      ],
+      "cv_mae": 4.19804779615176,
+      "cv_rmse": 6.038216160832892
+    },
+    {
+      "model": "market_hurdle+50pct_v6_market_fair",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_fair": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.068302606510176,
+          "rmse": 5.948529783959567,
+          "r2": 0.43398414534659613
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.204991138541279,
+          "rmse": 6.163526702135282,
+          "r2": 0.42229339860551884
+        }
+      ],
+      "cv_mae": 4.136646872525727,
+      "cv_rmse": 6.056028243047425
+    }
+  ],
+  "promoted": true,
+  "locked_before_replay_at_utc": "2026-10-28T09:46:56.849928+00:00",
+  "rule": "Minimize full-cohort mean CV RMSE, requiring MAE <= V5 and RMSE <= 99.75% of V5. Otherwise retain V5."
+}

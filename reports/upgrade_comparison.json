@@ -1,0 +1,18 @@
+{
+  "old": {
+    "n": 8288,
+    "mae": 4.4506481847821995,
+    "rmse": 6.2220425342895505,
+    "r2": 0.3877821721351872
+  },
+  "new": {
+    "n": 8288,
+    "mae": 4.150347939663023,
+    "rmse": 6.388276426519757,
+    "r2": 0.3546320092933867
+  },
+  "cv_mae_old": 4.408873894839452,
+  "cv_mae_new": 4.1349160326772285,
+  "evaluation_status": "Retrospective replay of the already-inspected V1 test set. New future weeks required for independent confirmation.",
+  "mae_reduction_from_v1_pct": 6.747337301249127
+}

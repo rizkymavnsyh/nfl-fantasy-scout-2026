@@ -1,0 +1,159 @@
+{
+  "promoted": true,
+  "full_cohort": {
+    "n": 8288,
+    "model": {
+      "n": 8288,
+      "mae": 4.28199608224227,
+      "rmse": 6.025276432152219,
+      "r2": 0.4258915037592035
+    },
+    "v5": {
+      "n": 8288,
+      "mae": 4.318424341285542,
+      "rmse": 6.097024667267481,
+      "r2": 0.41213727286874047
+    },
+    "baseline": {
+      "n": 8288,
+      "mae": 4.783471685971685,
+      "rmse": 6.774928312760573,
+      "r2": 0.27414574130379255
+    },
+    "tolerance": {
+      "model": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.517253861003861,
+        "within_5": 0.6994449806949807,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.6299226441631505
+      },
+      "v5": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.5129102316602316,
+        "within_5": 0.6987210424710425,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.629395218002813
+      },
+      "baseline": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4767133204633205,
+        "within_5": 0.6459942084942085,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.5940576652601969
+      }
+    }
+  },
+  "fantasy_pool": {
+    "n": 6193,
+    "model": {
+      "n": 6193,
+      "mae": 4.9853031615830865,
+      "rmse": 6.6599153115359115,
+      "r2": 0.358314039375637
+    },
+    "v5": {
+      "n": 6193,
+      "mae": 5.038467307295559,
+      "rmse": 6.745177944086156,
+      "r2": 0.34177867758992053
+    },
+    "baseline": {
+      "n": 6193,
+      "mae": 5.583828300769686,
+      "rmse": 7.480291489512389,
+      "r2": 0.19049009421389296
+    },
+    "tolerance": {
+      "model": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4090101727757145,
+        "within_5": 0.6242531890844502,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.6017156862745098
+      },
+      "v5": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4022283222993703,
+        "within_5": 0.6236072985628935,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.6017156862745098
+      },
+      "baseline": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.38446633295656385,
+        "within_5": 0.5708057484256418,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.5643382352941176
+      }
+    }
+  },
+  "features": [
+    "v6_team_spread",
+    "v6_total_line",
+    "v6_implied_team_total",
+    "v6_implied_opp_total",
+    "v6_dome",
+    "v6_div_game",
+    "v6_form_x_implied"
+  ],
+  "time_note": "Spread and total lines from the nflverse schedule. Historical rows use the archived closing line; live forecasts use the line published at refresh time. Lines missing for later weeks are median-imputed. No weather or game-day outcomes.",
+  "validation": {
+    "v5": {
+      "model": "v5_reference",
+      "weights": {
+        "lgb_mean15": 0.1875,
+        "lgb_fair": 0.0625,
+        "v5_role_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.250112804120475,
+          "rmse": 5.998194961965047,
+          "r2": 0.4244931847682548
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.372350579527341,
+          "rmse": 6.19983039591143,
+          "r2": 0.4154678746497238
+        }
+      ],
+      "cv_mae": 4.311231691823908,
+      "cv_rmse": 6.099012678938239
+    },
+    "selected": {
+      "model": "market_hurdle+50pct_v6_market_mean",
+      "weights": {
+        "v6_market_hurdle": 0.5,
+        "v6_market_mean": 0.5
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.192621962647597,
+          "rmse": 5.927289523798542,
+          "r2": 0.438019044908188
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.344961360747278,
+          "rmse": 6.13740013199895,
+          "r2": 0.42718069864319164
+        }
+      ],
+      "cv_mae": 4.2687916616974375,
+      "cv_rmse": 6.032344827898746
+    }
+  },
+  "replay_status": "2025/26 previously inspected for earlier versions. V6 selection used 2023/24 only; test scored once after selection."
+}

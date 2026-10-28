@@ -1,0 +1,174 @@
+{
+  "promoted": true,
+  "full_cohort": {
+    "n": 8288,
+    "model": {
+      "n": 8288,
+      "mae": 4.318424341285542,
+      "rmse": 6.09702466726748,
+      "r2": 0.4121372728687406
+    },
+    "v3": {
+      "n": 8288,
+      "mae": 4.334916589401347,
+      "rmse": 6.1825883996948745,
+      "r2": 0.3955217342525442
+    },
+    "baseline": {
+      "n": 8288,
+      "mae": 4.783471685971685,
+      "rmse": 6.774928312760573,
+      "r2": 0.27414574130379255
+    },
+    "tolerance": {
+      "model": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.5129102316602316,
+        "within_5": 0.6987210424710425,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.629395218002813
+      },
+      "v3": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.5213561776061776,
+        "within_5": 0.698238416988417,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.6279887482419128
+      },
+      "baseline": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4767133204633205,
+        "within_5": 0.6459942084942085,
+        "nonzero_n": 5688,
+        "nonzero_within_5": 0.5940576652601969
+      }
+    }
+  },
+  "fantasy_pool": {
+    "n": 6193,
+    "model": {
+      "n": 6193,
+      "mae": 5.038467307295559,
+      "rmse": 6.745177944086156,
+      "r2": 0.34177867758992053
+    },
+    "v3": {
+      "n": 6193,
+      "mae": 5.059020898590594,
+      "rmse": 6.8406068986246105,
+      "r2": 0.3230222544127217
+    },
+    "baseline": {
+      "n": 6193,
+      "mae": 5.583828300769686,
+      "rmse": 7.480291489512389,
+      "r2": 0.19049009421389296
+    },
+    "tolerance": {
+      "model": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4022283222993703,
+        "within_5": 0.6236072985628935,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.6017156862745098
+      },
+      "v3": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.4167608590343937,
+        "within_5": 0.6247376069756176,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.6019199346405228
+      },
+      "baseline": {
+        "definition": "Fraction with absolute error <= fixed PPR-point tolerance. Not classification accuracy.",
+        "within_3": 0.38446633295656385,
+        "within_5": 0.5708057484256418,
+        "nonzero_n": 4896,
+        "nonzero_within_5": 0.5643382352941176
+      }
+    }
+  },
+  "definition": "QB prior mean3 attempts>=15 or prior snap percentage>=0.5. RB/WR/TE prior mean3 chances>=5 or snap mean3>=0.25. Snap age<=2 weeks when known.",
+  "cohort_note": "Full cohort retained for all headline model comparisons. Fantasy-pool results reported separately with the identical subset for V3, V5 and baseline.",
+  "time_note": "Strictly prior-week snaps and injury reports. Dated injury updates after the target date excluded. Archived snap first-publication timestamps are unavailable, so historical results are replay rather than certified point-in-time reconstruction.",
+  "features": [
+    "v5_snap_pct_lag1",
+    "v5_snap_pct_mean3",
+    "v5_snap_count_mean3",
+    "v5_snap_pct_trend",
+    "v5_snap_weeks_ago",
+    "v5_snap_history_available",
+    "v5_injury_prev_report",
+    "v5_injury_prev_out",
+    "v5_injury_prev_questionable",
+    "v5_injury_prev_dnp",
+    "v5_injury_prev_limited",
+    "v5_injury_previous_week_missing",
+    "v5_chances_per_snap3",
+    "v5_qb_attempts_per_snap3",
+    "v5_points_per_snap3"
+  ],
+  "source_coverage": {
+    "snap_rows": 183217,
+    "snap_rows_mapped": 123578,
+    "ambiguous_player_ids_removed": 1
+  },
+  "validation": {
+    "v3": {
+      "model": "v3_reference",
+      "weights": {
+        "lgb_mean15": 0.75,
+        "lgb_fair": 0.25
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.271663859746896,
+          "rmse": 6.0925353929955595,
+          "r2": 0.4062475193189212
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.36642481864192,
+          "rmse": 6.259938885796989,
+          "r2": 0.4040786388543781
+        }
+      ],
+      "cv_mae": 4.3190443391944076,
+      "cv_rmse": 6.1762371393962745
+    },
+    "selected": {
+      "model": "v3+75pct_v5_role_hurdle",
+      "weights": {
+        "lgb_mean15": 0.1875,
+        "lgb_fair": 0.0625,
+        "v5_role_hurdle": 0.75
+      },
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.250112804120475,
+          "rmse": 5.998194961965047,
+          "r2": 0.4244931847682548
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.372350579527341,
+          "rmse": 6.19983039591143,
+          "r2": 0.4154678746497238
+        }
+      ],
+      "cv_mae": 4.311231691823908,
+      "cv_rmse": 6.099012678938239
+    }
+  },
+  "replay_status": "2025/26 already inspected. Retrospective replay only."
+}

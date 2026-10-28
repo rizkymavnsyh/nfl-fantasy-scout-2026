@@ -1,0 +1,33 @@
+{
+  "as_of_utc": "2026-10-28T09:47:50.780816+00:00",
+  "as_of_wib": "28 Oct 2026 16:47 WIB",
+  "season": 2026,
+  "season_label": "Musim reguler 2026 · berlanjut ke Januari 2027",
+  "latest_complete_week": 7,
+  "latest_observed_week": 7,
+  "next_week": 8,
+  "next_kickoff_utc": "2026-10-30T00:15:00+00:00",
+  "next_kickoff_wib": "30 Oct 2026 07:15 WIB",
+  "missing_completed_games": [],
+  "sources": [
+    {
+      "file": "stats_player_week_2026.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
+      "last_modified": null,
+      "bytes": 3315437,
+      "sha256": "24b95fd79ea1ea96354ccbe444e21cc75df3a7d466b1ccf30a5c93fcf481df37"
+    },
+    {
+      "file": "games.csv",
+      "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+      "last_modified": null,
+      "bytes": 2186549,
+      "sha256": "7c7a77f342fc4927adbd84ec2b94997b587cfbf9db4496c02e163cf1483b686f"
+    }
+  ],
+  "candidate_count": 384,
+  "next_game_per_team": true,
+  "history_training_n": 44605,
+  "coverage": "Next scheduled regular-season game for each currently eligible player; no season-total or playoff forecasts.",
+  "update_mode": "Manual refresh command, not an automatic live feed."
+}

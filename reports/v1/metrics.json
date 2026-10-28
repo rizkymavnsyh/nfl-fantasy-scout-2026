@@ -1,0 +1,303 @@
+{
+  "created_at": "2026-10-27T04:32:07.872602+00:00",
+  "selected_model": "hist_flexible",
+  "target": "Next scheduled game PPR fantasy points",
+  "positions": [
+    "QB",
+    "RB",
+    "WR",
+    "TE"
+  ],
+  "features": [
+    "fantasy_points_ppr_lag1",
+    "fantasy_points_ppr_mean3",
+    "fantasy_points_ppr_mean5",
+    "fantasy_points_ppr_season_mean",
+    "attempts_lag1",
+    "attempts_mean3",
+    "attempts_mean5",
+    "attempts_season_mean",
+    "passing_yards_lag1",
+    "passing_yards_mean3",
+    "passing_yards_mean5",
+    "passing_yards_season_mean",
+    "passing_tds_lag1",
+    "passing_tds_mean3",
+    "passing_tds_mean5",
+    "passing_tds_season_mean",
+    "passing_interceptions_lag1",
+    "passing_interceptions_mean3",
+    "passing_interceptions_mean5",
+    "passing_interceptions_season_mean",
+    "carries_lag1",
+    "carries_mean3",
+    "carries_mean5",
+    "carries_season_mean",
+    "rushing_yards_lag1",
+    "rushing_yards_mean3",
+    "rushing_yards_mean5",
+    "rushing_yards_season_mean",
+    "rushing_tds_lag1",
+    "rushing_tds_mean3",
+    "rushing_tds_mean5",
+    "rushing_tds_season_mean",
+    "targets_lag1",
+    "targets_mean3",
+    "targets_mean5",
+    "targets_season_mean",
+    "receptions_lag1",
+    "receptions_mean3",
+    "receptions_mean5",
+    "receptions_season_mean",
+    "receiving_yards_lag1",
+    "receiving_yards_mean3",
+    "receiving_yards_mean5",
+    "receiving_yards_season_mean",
+    "receiving_tds_lag1",
+    "receiving_tds_mean3",
+    "receiving_tds_mean5",
+    "receiving_tds_season_mean",
+    "target_share_lag1",
+    "target_share_mean3",
+    "target_share_mean5",
+    "target_share_season_mean",
+    "opponent_allowed_mean5",
+    "home",
+    "rest",
+    "weeks_since_seen",
+    "history_games",
+    "week",
+    "ppr_std5",
+    "position"
+  ],
+  "feature_count": 60,
+  "protocol": {
+    "training_seasons": "2019–2024",
+    "validation_seasons": [
+      2023,
+      2024
+    ],
+    "test_seasons": [
+      2025,
+      2026
+    ],
+    "latest_complete_2026_week": 6,
+    "selection": "Lowest mean MAE across expanding season folds, before test inspection",
+    "candidate_universe": "Offensive opportunity earlier in same season, last seen <=3 weeks, team scheduled",
+    "excluded": "Week 1, unobserved rookies, K, DST, IDP, bye weeks",
+    "injury_info": "No live injury reports or official active roster filter",
+    "latest_observed_2026_week": 7,
+    "partial_week_note": "Week 7 player stats omit DAL–PHI in this source snapshot. That game is excluded from test labels and histories, never filled with false zeros."
+  },
+  "train": {
+    "n": 36290,
+    "mae": 4.370369946997536,
+    "rmse": 6.063214047326125,
+    "r2": 0.4384452011374079
+  },
+  "test": {
+    "n": 8288,
+    "mae": 4.4506481847821995,
+    "rmse": 6.2220425342895505,
+    "r2": 0.3877821721351872
+  },
+  "baseline": {
+    "n": 8288,
+    "mae": 4.783471685971684,
+    "rmse": 6.774928312760573,
+    "r2": 0.27414574130379255
+  },
+  "cv_candidates": [
+    {
+      "model": "rolling_mean5",
+      "cv_mae": 4.6984062174442425,
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.6716595432300165,
+          "rmse": 6.680001564053602,
+          "r2": 0.28622317378096473
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.7251528916584675,
+          "rmse": 6.737690101240175,
+          "r2": 0.309647613969555
+        }
+      ]
+    },
+    {
+      "model": "ridge",
+      "cv_mae": 4.4313963899612,
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.39046215310735,
+          "rmse": 6.143729573232776,
+          "r2": 0.39622726414449483
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.472330626815049,
+          "rmse": 6.30891481975799,
+          "r2": 0.3947175328203002
+        }
+      ]
+    },
+    {
+      "model": "hist_conservative",
+      "cv_mae": 4.411737859262649,
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.368453592557061,
+          "rmse": 6.108733596661329,
+          "r2": 0.40308610677295587
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.455022125968236,
+          "rmse": 6.2569935506546095,
+          "r2": 0.40463927538656497
+        }
+      ]
+    },
+    {
+      "model": "hist_flexible",
+      "cv_mae": 4.405064022564487,
+      "folds": [
+        {
+          "validation_season": 2023,
+          "train_n": 24062,
+          "n": 6130,
+          "mae": 4.357359907754117,
+          "rmse": 6.1034702868767265,
+          "r2": 0.40411427053748017
+        },
+        {
+          "validation_season": 2024,
+          "train_n": 30192,
+          "n": 6098,
+          "mae": 4.452768137374857,
+          "rmse": 6.261200869928662,
+          "r2": 0.40383834286427245
+        }
+      ]
+    }
+  ],
+  "by_season": {
+    "2025": {
+      "model": {
+        "n": 6158,
+        "mae": 4.397025596287291,
+        "rmse": 6.17053343894357,
+        "r2": 0.3935016613998946
+      },
+      "baseline": {
+        "n": 6158,
+        "mae": 4.6849003464328245,
+        "rmse": 6.659375631525633,
+        "r2": 0.2935991382456369
+      }
+    },
+    "2026": {
+      "model": {
+        "n": 2130,
+        "mae": 4.6056753678580895,
+        "rmse": 6.368616597510933,
+        "r2": 0.3714382725866734
+      },
+      "baseline": {
+        "n": 2130,
+        "mae": 5.0684492957746485,
+        "rmse": 7.098427907098104,
+        "r2": 0.21912399693412088
+      }
+    }
+  },
+  "by_position": {
+    "QB": {
+      "model": {
+        "n": 1047,
+        "mae": 5.690773177687356,
+        "rmse": 7.690204171764681,
+        "r2": 0.40957411708872893
+      },
+      "baseline": {
+        "n": 1047,
+        "mae": 6.421073861827444,
+        "rmse": 8.723244304616609,
+        "r2": 0.24029371685068546
+      }
+    },
+    "RB": {
+      "model": {
+        "n": 2027,
+        "mae": 4.539509618569096,
+        "rmse": 6.377817236029788,
+        "r2": 0.40863940703630486
+      },
+      "baseline": {
+        "n": 2027,
+        "mae": 4.793671106725868,
+        "rmse": 6.807920277729524,
+        "r2": 0.32619044721664747
+      }
+    },
+    "TE": {
+      "model": {
+        "n": 1852,
+        "mae": 3.607486454449934,
+        "rmse": 5.091800843188904,
+        "r2": 0.31293893675312456
+      },
+      "baseline": {
+        "n": 1852,
+        "mae": 3.896033297336213,
+        "rmse": 5.58488136459061,
+        "r2": 0.17342850508590746
+      }
+    },
+    "WR": {
+      "model": {
+        "n": 3362,
+        "mae": 4.475336623425155,
+        "rmse": 6.181716066057915,
+        "r2": 0.3141820720253131
+      },
+      "baseline": {
+        "n": 3362,
+        "mae": 4.7561939321832245,
+        "rmse": 6.657964329008187,
+        "r2": 0.2044386887518903
+      }
+    }
+  },
+  "interval": {
+    "nominal": 0.8,
+    "coverage_test": 0.7870415057915058,
+    "description": "Symmetric empirical absolute-error band from 2023/24 development folds. No guarantee for individuals.",
+    "half_width_by_position": {
+      "QB": 9.36583973999043,
+      "RB": 6.976740342921203,
+      "TE": 5.33324986436684,
+      "WR": 7.023460120594351
+    }
+  },
+  "missing_stat_outcomes": 1816,
+  "prediction_week": 8,
+  "prediction_season": 2026,
+  "mae_improvement_pct": 6.957781357116514
+}

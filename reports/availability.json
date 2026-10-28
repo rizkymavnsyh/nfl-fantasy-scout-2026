@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "roster": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv",
+      "retrieved_at_utc": "2026-10-28T09:54:31.512515+00:00",
+      "last_modified": "Wed, 28 Oct 2026 06:04:47 GMT",
+      "sha256": "342ec8f6aac66f5aed9af0bad8d6e3589b90f00366015bac6b5bf893fc5d35ea",
+      "error": null
+    },
+    "injuries": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+      "retrieved_at_utc": "2026-10-28T09:54:31.512515+00:00",
+      "last_modified": "Wed, 28 Oct 2026 06:03:04 GMT",
+      "sha256": "2ccefb12af2e4c148d95657881412f9d16a8db6ed368fa79fc977d81e309523c",
+      "error": null
+    }
+  },
+  "eligible": 355,
+  "total": 384,
+  "checked_at_utc": "2026-10-28T09:54:33.568689+00:00",
+  "injury_latest_week": 8,
+  "game_day_active_confirmed": false,
+  "freshness_hours": 48
+}

@@ -1,0 +1,99 @@
+{
+  "snapshot_id": "20261027T142654305226Z",
+  "frozen_at_utc": "2026-10-27T14:26:54.305226+00:00",
+  "feature_cutoff_utc": "2026-10-27T14:23:18.229649+00:00",
+  "n": 384,
+  "protocol": {
+    "seed": 20261027,
+    "rosters_per_week": 30,
+    "slots": {
+      "QB": 1,
+      "RB": 2,
+      "WR": 2,
+      "TE": 1,
+      "FLEX": 1
+    },
+    "roster_sizes": {
+      "QB": 2,
+      "RB": 4,
+      "WR": 5,
+      "TE": 2
+    },
+    "candidate_caps": {
+      "QB": 24,
+      "RB": 60,
+      "WR": 72,
+      "TE": 30
+    },
+    "pool_rule": "Top pre-game rolling-five average per position, then seeded sampling without replacement.",
+    "claim": "Simulated rosters, not real league ownership. Weekly clusters are not independent roster trials.",
+    "missing_target_rule": "Zero only after final scores and player-stat rows for both teams are present."
+  },
+  "forecast_sha256": "7d8fd24adfb284304121f3be12a1d3c6cb0439f3ae10317be4cb05a53083364a",
+  "lineups_sha256": "817e3d76c7bb90e78f80f522cb9f5d248e180350057e0bf10c249a420c6ad10e",
+  "model_sha256": "d2e3394a2b28354c31458ed299c432fa453327ad333a19c614fbd20c48564f27",
+  "source_forecast": {
+    "as_of_utc": "2026-10-27T14:23:18.229649+00:00",
+    "as_of_wib": "27 Oct 2026 21:23 WIB",
+    "season": 2026,
+    "season_label": "Musim reguler 2026 · berlanjut ke Januari 2027",
+    "latest_complete_week": 7,
+    "latest_observed_week": 7,
+    "next_week": 8,
+    "next_kickoff_utc": "2026-10-30T00:15:00+00:00",
+    "next_kickoff_wib": "30 Oct 2026 07:15 WIB",
+    "missing_completed_games": [],
+    "sources": [
+      {
+        "file": "stats_player_week_2026.csv",
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
+        "last_modified": null,
+        "bytes": 3315437,
+        "sha256": "24b95fd79ea1ea96354ccbe444e21cc75df3a7d466b1ccf30a5c93fcf481df37"
+      },
+      {
+        "file": "games.csv",
+        "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+        "last_modified": null,
+        "bytes": 2186549,
+        "sha256": "7c7a77f342fc4927adbd84ec2b94997b587cfbf9db4496c02e163cf1483b686f"
+      }
+    ],
+    "candidate_count": 384,
+    "next_game_per_team": true,
+    "history_training_n": 44605,
+    "coverage": "Next scheduled regular-season game for each currently eligible player; no season-total or playoff forecasts.",
+    "update_mode": "Manual refresh command, not an automatic live feed."
+  },
+  "availability": {
+    "sources": {
+      "roster": {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv",
+        "retrieved_at_utc": "2026-10-27T14:25:44.537263+00:00",
+        "last_modified": "Tue, 27 Oct 2026 13:10:51 GMT",
+        "sha256": "bd71bc0d0715edfa2b5c98fc6c87d87a7f6186375004c799d44ef087c088762d",
+        "error": null
+      },
+      "injuries": {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+        "retrieved_at_utc": "2026-10-27T14:25:44.537263+00:00",
+        "last_modified": "Tue, 27 Oct 2026 13:08:39 GMT",
+        "sha256": "8f43bbc84087bd4d11a1658c9bb58e51eeb492e8f864a4ade25ea8d55c2b24a4",
+        "error": null
+      }
+    },
+    "eligible": 358,
+    "total": 384,
+    "checked_at_utc": "2026-10-27T14:25:47.820064+00:00",
+    "injury_latest_week": 7,
+    "game_day_active_confirmed": false,
+    "freshness_hours": 48
+  },
+  "code_sha256": {
+    "prospective.py": "82514a799aa4cadd265377373ff6ec2ce15be6d21faceba9319a53b563258b73",
+    "availability.py": "c40df65d1e4264aff538b855cbfe9e809c17b63735b263d4ddc6d5a5cb63f15f",
+    "forecast_models.py": "712df84cd22c9315b2052aa536b0e00815761dd997457550283c96fba100ec24",
+    "refresh_forecasts.py": "ffdae8a240917ae67abcb7d02aa70e4add45216649ac7a959677e31cc349afe5"
+  },
+  "note": "Append-only snapshot. Hash detects local edits, not independent third-party timestamp certification."
+}
