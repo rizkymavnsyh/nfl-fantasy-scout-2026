@@ -9,6 +9,8 @@ The current active model is **V6**, a 50/50 ensemble of a LightGBM regressor and
 
 ## Explore the dashboard
 
+**Live dashboard:** [https://rizkymavnsyh.github.io/nfl-fantasy-scout-2026/](https://rizkymavnsyh.github.io/nfl-fantasy-scout-2026/)
+
 Download the repository with **Code → Download ZIP** and extract it. Open [`NFL_Fantasy_Scout_2026.html`](NFL_Fantasy_Scout_2026.html) in a browser for the self-contained offline dashboard. GitHub's file viewer displays HTML source rather than running the dashboard.
 
 Alternatively, from the extracted project directory:
